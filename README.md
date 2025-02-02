@@ -28,92 +28,54 @@ $collection = Prefecture::all();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#9 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    object(Illuminate\Support\Collection)#13 (2) {
-      ["items":protected]=>
-      array(6) {
-        ["id"]=>
-        int(1)
-        ["name"]=>
-        string(9) "北海道"
-        ["short_name"]=>
-        string(9) "北海道"
-        ["hiragana_name"]=>
-        string(18) "ほっかいどう"
-        ["katakana_name"]=>
-        string(18) "ホッカイドウ"
-        ["english_name"]=>
-        string(8) "hokkaido"
+  ["items":protected]=>array(47) {
+    [0]=>object(Illuminate\Support\Collection)#13 (2) {
+      ["items":protected]=>array(6) {
+        ["id"]=>int(1)
+        ["name"]=>string(9) "北海道"
+        ["short_name"]=>string(9) "北海道"
+        ["hiragana_name"]=>string(18) "ほっかいどう"
+        ["katakana_name"]=>string(18) "ホッカイドウ"
+        ["english_name"]=>string(8) "hokkaido"
       }
-      ["escapeWhenCastingToString":protected]=>
-      bool(false)
+      ["escapeWhenCastingToString":protected]=>bool(false)
     }
-    [1]=>
-    object(Illuminate\Support\Collection)#14 (2) {
-      ["items":protected]=>
-      array(6) {
-        ["id"]=>
-        int(2)
-        ["name"]=>
-        string(9) "青森県"
-        ["short_name"]=>
-        string(6) "青森"
-        ["hiragana_name"]=>
-        string(18) "あおもりけん"
-        ["katakana_name"]=>
-        string(18) "アオモリケン"
-        ["english_name"]=>
-        string(6) "aomori"
+    [1]=>object(Illuminate\Support\Collection)#14 (2) {
+      ["items":protected]=>array(6) {
+        ["id"]=>int(2)
+        ["name"]=>string(9) "青森県"
+        ["short_name"]=>string(6) "青森"
+        ["hiragana_name"]=>string(18) "あおもりけん"
+        ["katakana_name"]=>string(18) "アオモリケン"
+        ["english_name"]=>string(6) "aomori"
       }
-      ["escapeWhenCastingToString":protected]=>
-      bool(false)
+      ["escapeWhenCastingToString":protected]=>bool(false)
     }
     ...
-    [45]=>
-    object(Illuminate\Support\Collection)#58 (2) {
-      ["items":protected]=>
-      array(6) {
-        ["id"]=>
-        int(46)
-        ["name"]=>
-        string(12) "鹿児島県"
-        ["short_name"]=>
-        string(9) "鹿児島"
-        ["hiragana_name"]=>
-        string(18) "かごしまけん"
-        ["katakana_name"]=>
-        string(18) "カゴシマケン"
-        ["english_name"]=>
-        string(9) "kagoshima"
+    [45]=>object(Illuminate\Support\Collection)#58 (2) {
+      ["items":protected]=>array(6) {
+        ["id"]=>int(46)
+        ["name"]=>string(12) "鹿児島県"
+        ["short_name"]=>string(9) "鹿児島"
+        ["hiragana_name"]=>string(18) "かごしまけん"
+        ["katakana_name"]=>string(18) "カゴシマケン"
+        ["english_name"]=>string(9) "kagoshima"
       }
-      ["escapeWhenCastingToString":protected]=>
-      bool(false)
+      ["escapeWhenCastingToString":protected]=>bool(false)
     }
-    [46]=>
-    object(Illuminate\Support\Collection)#59 (2) {
-      ["items":protected]=>
-      array(6) {
-        ["id"]=>
-        int(47)
-        ["name"]=>
-        string(9) "沖縄県"
-        ["short_name"]=>
-        string(6) "沖縄"
-        ["hiragana_name"]=>
-        string(18) "おきなわけん"
-        ["katakana_name"]=>
-        string(18) "オキナワケン"
-        ["english_name"]=>
-        string(7) "okinawa"
+    [46]=>object(Illuminate\Support\Collection)#59 (2) {
+      ["items":protected]=>array(6) {
+        ["id"]=>int(47)
+        ["name"]=>string(9) "沖縄県"
+        ["short_name"]=>string(6) "沖縄"
+        ["hiragana_name"]=>string(18) "おきなわけん"
+        ["katakana_name"]=>string(18) "オキナワケン"
+        ["english_name"]=>string(7) "okinawa"
       }
-      ["escapeWhenCastingToString":protected]=>
-      bool(false)
+      ["escapeWhenCastingToString":protected]=>bool(false)
     }
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 ```
@@ -124,20 +86,14 @@ $collection = Prefecture::allId();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    int(1)
-    [1]=>
-    int(2)
+  ["items":protected]=>array(47) {
+    [0]=>int(1)
+    [1]=>int(2)
     ...
-    [45]=>
-    int(46)
-    [46]=>
-    int(47)
+    [45]=>int(46)
+    [46]=>int(47)
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 
@@ -145,20 +101,14 @@ $collection = Prefecture::allName();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    string(9) "北海道"
-    [1]=>
-    string(9) "青森県"
+  ["items":protected]=>array(47) {
+    [0]=>string(9) "北海道"
+    [1]=>string(9) "青森県"
     ...
-    [45]=>
-    string(12) "鹿児島県"
-    [46]=>
-    string(9) "沖縄県"
+    [45]=>string(12) "鹿児島県"
+    [46]=>string(9) "沖縄県"
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 
@@ -166,20 +116,14 @@ $collection = Prefecture::allShortName();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    string(9) "北海道"
-    [1]=>
-    string(6) "青森"
+  ["items":protected]=>array(47) {
+    [0]=>string(9) "北海道"
+    [1]=>string(6) "青森"
     ...
-    [45]=>
-    string(9) "鹿児島"
-    [46]=>
-    string(6) "沖縄"
+    [45]=>string(9) "鹿児島"
+    [46]=>string(6) "沖縄"
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 
@@ -187,20 +131,14 @@ $collection = Prefecture::allHiraganaName();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    string(18) "ほっかいどう"
-    [1]=>
-    string(18) "あおもりけん"
+  ["items":protected]=>array(47) {
+    [0]=>string(18) "ほっかいどう"
+    [1]=>string(18) "あおもりけん"
     ...
-    [45]=>
-    string(18) "かごしまけん"
-    [46]=>
-    string(18) "おきなわけん"
+    [45]=>string(18) "かごしまけん"
+    [46]=>string(18) "おきなわけん"
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 
@@ -208,20 +146,14 @@ $collection = Prefecture::allKatakanaName();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    string(18) "ホッカイドウ"
-    [1]=>
-    string(18) "アオモリケン"
+  ["items":protected]=>array(47) {
+    [0]=>string(18) "ホッカイドウ"
+    [1]=>string(18) "アオモリケン"
     ...
-    [45]=>
-    string(18) "カゴシマケン"
-    [46]=>
-    string(18) "オキナワケン"
+    [45]=>string(18) "カゴシマケン"
+    [46]=>string(18) "オキナワケン"
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 
@@ -229,20 +161,14 @@ $collection = Prefecture::allEnglishName();
 var_dump($collection);
 /*------------------------------
 object(Illuminate\Support\Collection)#6 (2) {
-  ["items":protected]=>
-  array(47) {
-    [0]=>
-    string(8) "hokkaido"
-    [1]=>
-    string(6) "aomori"
+  ["items":protected]=>array(47) {
+    [0]=>string(8) "hokkaido"
+    [1]=>string(6) "aomori"
     ...
-    [45]=>
-    string(9) "kagoshima"
-    [46]=>
-    string(7) "okinawa"
+    [45]=>string(9) "kagoshima"
+    [46]=>string(7) "okinawa"
   }
-  ["escapeWhenCastingToString":protected]=>
-  bool(false)
+  ["escapeWhenCastingToString":protected]=>bool(false)
 }
 ------------------------------*/
 ```
