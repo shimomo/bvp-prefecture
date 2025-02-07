@@ -6,7 +6,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture)
 [![License](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-Prefecture is designed to retrieve information about Japan's prefectures using identifiers such as id, name, short name, hiragana name, katakana name, or english name.
+The BVP Prefecture package is designed to retrieve information about Japanese prefectures using identifiers, including ID and name (short, Hiragana, Katakana, English).
 
 ## Installation
 ```bash
@@ -276,4 +276,4 @@ var_dump($collection->get('english_name'));  // string(5) "tokyo"
 ```
 
 ## License
-The Prefecture is open source software licensed under the [MIT license](LICENSE).
+The BVP Prefecture package is open source software licensed under the [MIT license](LICENSE).
