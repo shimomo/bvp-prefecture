@@ -1,7 +1,7 @@
 {
     "name": "bvp/prefecture",
     "description": "The BVP Prefecture package for Japan.",
-    "keywords": ["prefecture", "library"],
+    "keywords": ["library", "boatrace", "prefecture"],
     "license": "MIT",
     "type": "library",
     "authors": [
