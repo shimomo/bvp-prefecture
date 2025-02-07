@@ -1,6 +1,6 @@
 {
     "name": "bvp/prefecture",
-    "description": "Retrieve information about Japan's prefectures",
+    "description": "The BVP Prefecture package for Japan.",
     "keywords": ["prefecture", "library"],
     "license": "MIT",
     "type": "library",
