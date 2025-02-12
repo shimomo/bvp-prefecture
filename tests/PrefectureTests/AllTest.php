@@ -19,7 +19,7 @@ class AllTest extends PrefectureTestCase
     {
         foreach (range(1, 47) as $index) {
             $expected = $this->prefecturesDTO->get($index);
-            $actual = Prefecture::all()->get($index - 1);
+            $actual = Prefecture::all()->get($index);
             $this->assertPrefecture($expected, $actual);
         }
     }

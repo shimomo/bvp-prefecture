@@ -82,7 +82,7 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function all(string $name, array $arguments): Collection
     {
-        return $this->prefectures;
+        return $this->prefectures->keyby('id');
     }
 
     /**
