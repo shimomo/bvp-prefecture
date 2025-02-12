@@ -138,13 +138,14 @@ class PrefectureCore implements PrefectureCoreInterface
             );
         }
 
-        $prefectures = $this->prefectures->keyBy(Str::snake($name));
-        if ($prefectures->has($arguments[0])) {
-            return $prefectures->get($arguments[0]);
+        $prefectureKey = Str::snake($name);
+        $exactMatchedPrefecture = $this->prefectures->firstWhere($prefectureKey, $arguments[0]);
+        if (!is_null($exactMatchedPrefecture)) {
+            return $exactMatchedPrefecture;
         }
 
-        return $prefectures->filter(
-            fn($value, $key) => Str::contains($key, $arguments[0])
+        return $this->prefectures->filter(
+            fn($value, $key) => Str::contains($value->get($prefectureKey), $arguments[0])
         )->first();
     }
 }
