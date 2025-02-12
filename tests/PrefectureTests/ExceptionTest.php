@@ -20,7 +20,8 @@ class ExceptionTest extends PrefectureTestCase
     {
         $this->expectException(BadMethodCallException::class);
         $this->expectExceptionMessage(
-            'Method \'invalid\' does not exist on \'BVP\Prefecture\PrefectureCore\'.'
+            "BVP\Prefecture\PrefectureCore::resolveMethod() - " .
+            "The specified method 'invalid' does not exist in class 'BVP\Prefecture\PrefectureCore'."
         );
 
         Prefecture::invalid();

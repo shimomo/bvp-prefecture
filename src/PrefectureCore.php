@@ -71,7 +71,7 @@ class PrefectureCore implements PrefectureCoreInterface
         }
 
         throw new BadMethodCallException(
-            'Method \'' . $name . '\' does not exist on \'' . self::class . '\'.'
+            __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
         );
     }
 
