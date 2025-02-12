@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Prefecture\Tests;
 
-use Boatrace\Venture\Project\Tests\PrefectureDTO;
+use BVP\Prefecture\Tests\PrefectureDTO;
 use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
 
@@ -40,7 +40,7 @@ abstract class PrefectureTestCase extends TestCase
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\Tests\DTO\PrefectureDTO  $prefecture
+     * @param  \BVP\Prefecture\Tests\DTO\PrefectureDTO  $prefecture
      * @param  \Illuminate\Support\Collection                     $collection
      * @return void
      */
@@ -55,7 +55,7 @@ abstract class PrefectureTestCase extends TestCase
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\Tests\DTO\PrefectureDTO  $prefecture
+     * @param  \BVP\Prefecture\Tests\DTO\PrefectureDTO  $prefecture
      * @param  \Illuminate\Support\Collection                     $collection
      * @param  string|int                                         $keyName
      * @return void
@@ -72,7 +72,7 @@ abstract class PrefectureTestCase extends TestCase
 
     /**
      * @param  array  $prefecture
-     * @return \Boatrace\Venture\Project\Tests\DTO\PrefectureDTO
+     * @return \BVP\Prefecture\Tests\DTO\PrefectureDTO
      */
     protected function createPrefectureDTO(array $prefecture): PrefectureDTO
     {

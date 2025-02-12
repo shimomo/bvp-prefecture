@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests\PrefectureCoreTests;
+namespace BVP\Prefecture\Tests\PrefectureCoreTests;
 
-use Boatrace\Venture\Project\PrefectureCore;
-use Boatrace\Venture\Project\Tests\PrefectureTestCase;
+use BVP\Prefecture\PrefectureCore;
+use BVP\Prefecture\Tests\PrefectureTestCase;
 
 /**
  * @author shimomo
@@ -13,7 +13,7 @@ use Boatrace\Venture\Project\Tests\PrefectureTestCase;
 abstract class TestCase extends PrefectureTestCase
 {
     /**
-     * @var \Boatrace\Venture\Project\PrefectureCore
+     * @var \BVP\Prefecture\PrefectureCore
      */
     protected PrefectureCore $prefecture;
 

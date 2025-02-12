@@ -19,7 +19,7 @@ composer require bvp/prefecture
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Boatrace\Venture\Project\Prefecture;
+use BVP\Prefecture\Prefecture;
 ```
 
 ### For all()

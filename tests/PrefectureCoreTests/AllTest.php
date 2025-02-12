@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests\PrefectureCoreTests;
+namespace BVP\Prefecture\Tests\PrefectureCoreTests;
 
 /**
  * @author shimomo

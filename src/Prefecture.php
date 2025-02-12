@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Prefecture;
 
 use Illuminate\Support\Collection;
 
@@ -12,12 +12,12 @@ use Illuminate\Support\Collection;
 class Prefecture implements PrefectureInterface
 {
     /**
-     * @var \Boatrace\Venture\Project\PrefectureInterface|null
+     * @var \BVP\Prefecture\PrefectureInterface|null
      */
     private static ?PrefectureInterface $instance;
 
     /**
-     * @param  \Boatrace\Venture\Project\PrefectureCoreInterface  $prefecture
+     * @param  \BVP\Prefecture\PrefectureCoreInterface  $prefecture
      * @return void
      */
     public function __construct(private readonly PrefectureCoreInterface $prefecture) {}
@@ -43,8 +43,8 @@ class Prefecture implements PrefectureInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\PrefectureCoreInterface|null  $prefectureCore
-     * @return \Boatrace\Venture\Project\PrefectureInterface
+     * @param  \BVP\Prefecture\PrefectureCoreInterface|null  $prefectureCore
+     * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function getInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface
     {
@@ -52,8 +52,8 @@ class Prefecture implements PrefectureInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\PrefectureCoreInterface|null  $prefectureCore
-     * @return \Boatrace\Venture\Project\PrefectureInterface
+     * @param  \BVP\Prefecture\PrefectureCoreInterface|null  $prefectureCore
+     * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function createInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface
     {

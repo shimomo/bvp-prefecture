@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Boatrace\\Venture\\Project\\": "src/"
+            "BVP\\Prefecture\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Boatrace\\Venture\\Project\\Tests\\": "tests/"
+            "BVP\\Prefecture\\Tests\\": "tests/"
         }
     }
 }

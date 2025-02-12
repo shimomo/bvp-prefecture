@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests\PrefectureTests;
+namespace BVP\Prefecture\Tests\PrefectureTests;
 
-use Boatrace\Venture\Project\Prefecture;
-use Boatrace\Venture\Project\Tests\PrefectureTestCase;
+use BVP\Prefecture\Prefecture;
+use BVP\Prefecture\Tests\PrefectureTestCase;
 
 /**
  * @author shimomo

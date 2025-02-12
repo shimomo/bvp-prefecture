@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Prefecture;
 
 use Illuminate\Support\Collection;
 
@@ -26,14 +26,14 @@ interface PrefectureInterface
     public static function __callStatic(string $name, array $arguments): ?Collection;
 
     /**
-     * @param  \Boatrace\Venture\Project\PrefectureCoreInterface|null  $prefectureCore
-     * @return \Boatrace\Venture\Project\PrefectureInterface
+     * @param  \BVP\Prefecture\PrefectureCoreInterface|null  $prefectureCore
+     * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function getInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface;
 
     /**
-     * @param  \Boatrace\Venture\Project\PrefectureCoreInterface|null  $prefectureCore
-     * @return \Boatrace\Venture\Project\PrefectureInterface
+     * @param  \BVP\Prefecture\PrefectureCoreInterface|null  $prefectureCore
+     * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function createInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests\PrefectureTests;
+namespace BVP\Prefecture\Tests\PrefectureTests;
 
 use BadMethodCallException;
-use Boatrace\Venture\Project\Prefecture;
-use Boatrace\Venture\Project\Tests\PrefectureTestCase;
+use BVP\Prefecture\Prefecture;
+use BVP\Prefecture\Tests\PrefectureTestCase;
 
 /**
  * @author shimomo
@@ -20,7 +20,7 @@ class ExceptionTest extends PrefectureTestCase
     {
         $this->expectException(BadMethodCallException::class);
         $this->expectExceptionMessage(
-            'Method \'invalid\' does not exist on \'Boatrace\Venture\Project\PrefectureCore\'.'
+            'Method \'invalid\' does not exist on \'BVP\Prefecture\PrefectureCore\'.'
         );
 
         Prefecture::invalid();
