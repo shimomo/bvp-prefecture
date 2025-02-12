@@ -105,20 +105,20 @@ class PrefectureCore implements PrefectureCoreInterface
             return null;
         }
 
-        $prefectures = $this->prefectures->keyBy(Str::snake($name));
-        $exactMatchedPrefectures = $prefectures->only(...$arguments);
+        $prefectureKey = Str::snake($name);
+        $exactMatchedPrefectures = $this->prefectures->whereIn($prefectureKey, $arguments);
         if ($exactMatchedPrefectures->isNotEmpty()) {
-            return $exactMatchedPrefectures;
+            return $exactMatchedPrefectures->keyBy('id');
         }
 
         $argumentsCollection = collect($arguments);
-        $partialMatchedPrefectures = $prefectures->filter(
+        $partialMatchedPrefectures = $this->prefectures->filter(
             fn($value, $key) => $argumentsCollection->filter(
-                fn($argument) => Str::contains($key, $argument)
+                fn($argument) => Str::contains($value->get($prefectureKey), $argument)
             )->isNotEmpty()
         );
         if ($partialMatchedPrefectures->isNotEmpty()) {
-            return $partialMatchedPrefectures;
+            return $partialMatchedPrefectures->keyBy('id');
         }
 
         return null;
