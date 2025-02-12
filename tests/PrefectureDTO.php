@@ -25,5 +25,5 @@ class PrefectureDTO
         public string $hiraganaName,
         public string $katakanaName,
         public string $englishName
-    ){}
+    ) {}
 }
