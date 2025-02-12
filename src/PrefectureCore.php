@@ -90,6 +90,8 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  string  $name
      * @param  array   $arguments
      * @return \Illuminate\Support\Collection|null
+     *
+     * @throws \InvalidArgumentException
      */
     private function byList(string $name, array $arguments): ?Collection
     {
@@ -123,6 +125,8 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  string  $name
      * @param  array   $arguments
      * @return \Illuminate\Support\Collection|null
+     *
+     * @throws \InvalidArgumentException
      */
     private function by(string $name, array $arguments): ?Collection
     {
