@@ -23,7 +23,7 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private array $resolveMethodMap = [
         '/^all(?!By)(.*)$/u' => 'all',
-        '/^allBy(.+)$/u' => 'allBy',
+        '/^by(.+)List$/u' => 'byList',
         '/^by(.+)$/u' => 'by',
     ];
 
@@ -99,7 +99,7 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  array   $arguments
      * @return \Illuminate\Support\Collection|null
      */
-    private function allBy(string $name, array $arguments): ?Collection
+    private function byList(string $name, array $arguments): ?Collection
     {
         if (empty($arguments)) {
             return null;

@@ -10,459 +10,459 @@ use BVP\Prefecture\Tests\PrefectureTestCase;
 /**
  * @author shimomo
  */
-class AllByTest extends PrefectureTestCase
+class ByListTest extends PrefectureTestCase
 {
     /**
      * @return void
      */
-    public function testAllById(): void
+    public function testByIdList(): void
     {
-        $collection = Prefecture::allById(13);
+        $collection = Prefecture::byIdList(13);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allById([13]);
+        $collection = Prefecture::byIdList([13]);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allById(13, 34);
+        $collection = Prefecture::byIdList(13, 34);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allById([13, 34]);
+        $collection = Prefecture::byIdList([13, 34]);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allById(13, 34, 48);
+        $collection = Prefecture::byIdList(13, 34, 48);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allById([13, 34, 48]);
+        $collection = Prefecture::byIdList([13, 34, 48]);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allById());
-        $this->assertNull(Prefecture::allById([]));
-        $this->assertNull(Prefecture::allById(48));
-        $this->assertNull(Prefecture::allById([48]));
+        $this->assertNull(Prefecture::byIdList());
+        $this->assertNull(Prefecture::byIdList([]));
+        $this->assertNull(Prefecture::byIdList(48));
+        $this->assertNull(Prefecture::byIdList([48]));
     }
 
     /**
      * @return void
      */
-    public function testAllByName(): void
+    public function testByNameList(): void
     {
-        $collection = Prefecture::allByName('東京都');
+        $collection = Prefecture::byNameList('東京都');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName(['東京都']);
+        $collection = Prefecture::byNameList(['東京都']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName('東京都', '広島県');
+        $collection = Prefecture::byNameList('東京都', '広島県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東京都', '広島県']);
+        $collection = Prefecture::byNameList(['東京都', '広島県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName('東京都', '広島県', '都道府県');
+        $collection = Prefecture::byNameList('東京都', '広島県', '都道府県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東京都', '広島県', '都道府県']);
+        $collection = Prefecture::byNameList(['東京都', '広島県', '都道府県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName('東京');
+        $collection = Prefecture::byNameList('東京');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName(['東京']);
+        $collection = Prefecture::byNameList(['東京']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName('東京', '広島');
+        $collection = Prefecture::byNameList('東京', '広島');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東京', '広島']);
+        $collection = Prefecture::byNameList(['東京', '広島']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName('東京', '広島', '都道府県');
+        $collection = Prefecture::byNameList('東京', '広島', '都道府県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東京', '広島', '都道府県']);
+        $collection = Prefecture::byNameList(['東京', '広島', '都道府県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName('東');
+        $collection = Prefecture::byNameList('東');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName(['東']);
+        $collection = Prefecture::byNameList(['東']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByName('東', '広');
+        $collection = Prefecture::byNameList('東', '広');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東', '広']);
+        $collection = Prefecture::byNameList(['東', '広']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName('東', '広', '都道府県');
+        $collection = Prefecture::byNameList('東', '広', '都道府県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByName(['東', '広', '都道府県']);
+        $collection = Prefecture::byNameList(['東', '広', '都道府県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allByName());
-        $this->assertNull(Prefecture::allByName([]));
+        $this->assertNull(Prefecture::byNameList());
+        $this->assertNull(Prefecture::byNameList([]));
     }
 
     /**
      * @return void
      */
-    public function testAllByShortName(): void
+    public function testByShortNameList(): void
     {
-        $collection = Prefecture::allByShortName('東京');
+        $collection = Prefecture::byShortNameList('東京');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByShortName(['東京']);
+        $collection = Prefecture::byShortNameList(['東京']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByShortName('東京', '広島');
+        $collection = Prefecture::byShortNameList('東京', '広島');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName(['東京', '広島']);
+        $collection = Prefecture::byShortNameList(['東京', '広島']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName('東京', '広島', '都道府県');
+        $collection = Prefecture::byShortNameList('東京', '広島', '都道府県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName(['東京', '広島', '都道府県']);
+        $collection = Prefecture::byShortNameList(['東京', '広島', '都道府県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName('東');
+        $collection = Prefecture::byShortNameList('東');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByShortName(['東']);
+        $collection = Prefecture::byShortNameList(['東']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByShortName('東', '広');
+        $collection = Prefecture::byShortNameList('東', '広');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName(['東', '広']);
+        $collection = Prefecture::byShortNameList(['東', '広']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName('東', '広', '都道府県');
+        $collection = Prefecture::byShortNameList('東', '広', '都道府県');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByShortName(['東', '広', '都道府県']);
+        $collection = Prefecture::byShortNameList(['東', '広', '都道府県']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allByShortName('東京都'));
-        $this->assertNull(Prefecture::allByShortName(['東京都']));
-        $this->assertNull(Prefecture::allByShortName('東京都', '広島県'));
-        $this->assertNull(Prefecture::allByShortName(['東京都', '広島県']));
-        $this->assertNull(Prefecture::allByShortName('東京都', '広島県', '都道府県'));
-        $this->assertNull(Prefecture::allByShortName(['東京都', '広島県', '都道府県']));
-        $this->assertNull(Prefecture::allByShortName());
-        $this->assertNull(Prefecture::allByShortName([]));
+        $this->assertNull(Prefecture::byShortNameList('東京都'));
+        $this->assertNull(Prefecture::byShortNameList(['東京都']));
+        $this->assertNull(Prefecture::byShortNameList('東京都', '広島県'));
+        $this->assertNull(Prefecture::byShortNameList(['東京都', '広島県']));
+        $this->assertNull(Prefecture::byShortNameList('東京都', '広島県', '都道府県'));
+        $this->assertNull(Prefecture::byShortNameList(['東京都', '広島県', '都道府県']));
+        $this->assertNull(Prefecture::byShortNameList());
+        $this->assertNull(Prefecture::byShortNameList([]));
     }
 
     /**
      * @return void
      */
-    public function testAllByHiraganaName(): void
+    public function testByHiraganaNameList(): void
     {
-        $collection = Prefecture::allByHiraganaName('とうきょうと');
+        $collection = Prefecture::byHiraganaNameList('とうきょうと');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょうと']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょうと']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName('とうきょうと', 'ひろしまけん');
+        $collection = Prefecture::byHiraganaNameList('とうきょうと', 'ひろしまけん');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょうと', 'ひろしまけん']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょうと', 'ひろしまけん']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName('とうきょうと', 'ひろしまけん', 'とどうふけん');
+        $collection = Prefecture::byHiraganaNameList('とうきょうと', 'ひろしまけん', 'とどうふけん');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょうと', 'ひろしまけん', 'とどうふけん']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょうと', 'ひろしまけん', 'とどうふけん']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName('とうきょう');
+        $collection = Prefecture::byHiraganaNameList('とうきょう');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょう']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょう']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName('とうきょう', 'ひろしま');
+        $collection = Prefecture::byHiraganaNameList('とうきょう', 'ひろしま');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょう', 'ひろしま']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょう', 'ひろしま']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName('とうきょう', 'ひろしま', 'とどうふけん');
+        $collection = Prefecture::byHiraganaNameList('とうきょう', 'ひろしま', 'とどうふけん');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とうきょう', 'ひろしま', 'とどうふけん']);
+        $collection = Prefecture::byHiraganaNameList(['とうきょう', 'ひろしま', 'とどうふけん']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName('とう');
+        $collection = Prefecture::byHiraganaNameList('とう');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName(['とう']);
+        $collection = Prefecture::byHiraganaNameList(['とう']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByHiraganaName('とう', 'ひろ');
+        $collection = Prefecture::byHiraganaNameList('とう', 'ひろ');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とう', 'ひろ']);
+        $collection = Prefecture::byHiraganaNameList(['とう', 'ひろ']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName('とう', 'ひろ', 'とどうふけん');
+        $collection = Prefecture::byHiraganaNameList('とう', 'ひろ', 'とどうふけん');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByHiraganaName(['とう', 'ひろ', 'とどうふけん']);
+        $collection = Prefecture::byHiraganaNameList(['とう', 'ひろ', 'とどうふけん']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allByHiraganaName());
-        $this->assertNull(Prefecture::allByHiraganaName([]));
+        $this->assertNull(Prefecture::byHiraganaNameList());
+        $this->assertNull(Prefecture::byHiraganaNameList([]));
     }
 
     /**
      * @return void
      */
-    public function testAllByKatakanaName(): void
+    public function testByKatakanaNameList(): void
     {
-        $collection = Prefecture::allByKatakanaName('トウキョウト');
+        $collection = Prefecture::byKatakanaNameList('トウキョウト');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウト']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウト']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName('トウキョウト', 'ヒロシマケン');
+        $collection = Prefecture::byKatakanaNameList('トウキョウト', 'ヒロシマケン');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウト', 'ヒロシマケン']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウト', 'ヒロシマケン']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName('トウキョウト', 'ヒロシマケン', 'トドウフケン');
+        $collection = Prefecture::byKatakanaNameList('トウキョウト', 'ヒロシマケン', 'トドウフケン');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウト', 'ヒロシマケン', 'トドウフケン']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウト', 'ヒロシマケン', 'トドウフケン']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName('トウキョウ');
+        $collection = Prefecture::byKatakanaNameList('トウキョウ');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウ']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウ']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName('トウキョウ', 'ヒロシマ');
+        $collection = Prefecture::byKatakanaNameList('トウキョウ', 'ヒロシマ');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウ', 'ヒロシマ']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウ', 'ヒロシマ']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName('トウキョウ', 'ヒロシマ', 'トドウフケン');
+        $collection = Prefecture::byKatakanaNameList('トウキョウ', 'ヒロシマ', 'トドウフケン');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウキョウ', 'ヒロシマ', 'トドウフケン']);
+        $collection = Prefecture::byKatakanaNameList(['トウキョウ', 'ヒロシマ', 'トドウフケン']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName('トウ');
+        $collection = Prefecture::byKatakanaNameList('トウ');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName(['トウ']);
+        $collection = Prefecture::byKatakanaNameList(['トウ']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByKatakanaName('トウ', 'ヒロ');
+        $collection = Prefecture::byKatakanaNameList('トウ', 'ヒロ');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウ', 'ヒロ']);
+        $collection = Prefecture::byKatakanaNameList(['トウ', 'ヒロ']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName('トウ', 'ヒロ', 'トドウフケン');
+        $collection = Prefecture::byKatakanaNameList('トウ', 'ヒロ', 'トドウフケン');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByKatakanaName(['トウ', 'ヒロ', 'トドウフケン']);
+        $collection = Prefecture::byKatakanaNameList(['トウ', 'ヒロ', 'トドウフケン']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allByKatakanaName());
-        $this->assertNull(Prefecture::allByKatakanaName([]));
+        $this->assertNull(Prefecture::byKatakanaNameList());
+        $this->assertNull(Prefecture::byKatakanaNameList([]));
     }
 
     /**
      * @return void
      */
-    public function testAllByEnglishName(): void
+    public function testByEnglishNameList(): void
     {
-        $collection = Prefecture::allByEnglishName('tokyo');
+        $collection = Prefecture::byEnglishNameList('tokyo');
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByEnglishName(['tokyo']);
+        $collection = Prefecture::byEnglishNameList(['tokyo']);
         $this->assertSame(1, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByEnglishName('tokyo', 'hiroshima');
+        $collection = Prefecture::byEnglishNameList('tokyo', 'hiroshima');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName(['tokyo', 'hiroshima']);
+        $collection = Prefecture::byEnglishNameList(['tokyo', 'hiroshima']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName('tokyo', 'hiroshima', 'prefecture');
+        $collection = Prefecture::byEnglishNameList('tokyo', 'hiroshima', 'prefecture');
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName(['tokyo', 'hiroshima', 'prefecture']);
+        $collection = Prefecture::byEnglishNameList(['tokyo', 'hiroshima', 'prefecture']);
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName('to');
+        $collection = Prefecture::byEnglishNameList('to');
         $this->assertSame(7, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByEnglishName(['to']);
+        $collection = Prefecture::byEnglishNameList(['to']);
         $this->assertSame(7, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::allByEnglishName('to', 'hiro');
+        $collection = Prefecture::byEnglishNameList('to', 'hiro');
         $this->assertSame(8, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName(['to', 'hiro']);
+        $collection = Prefecture::byEnglishNameList(['to', 'hiro']);
         $this->assertSame(8, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName('to', 'hiro', 'prefecture');
+        $collection = Prefecture::byEnglishNameList('to', 'hiro', 'prefecture');
         $this->assertSame(8, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::allByEnglishName(['to', 'hiro', 'prefecture']);
+        $collection = Prefecture::byEnglishNameList(['to', 'hiro', 'prefecture']);
         $this->assertSame(8, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::allByEnglishName());
-        $this->assertNull(Prefecture::allByEnglishName([]));
+        $this->assertNull(Prefecture::byEnglishNameList());
+        $this->assertNull(Prefecture::byEnglishNameList([]));
     }
 }
