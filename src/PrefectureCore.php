@@ -7,6 +7,7 @@ namespace BVP\Prefecture;
 use BadMethodCallException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use InvalidArgumentException;
 
 /**
  * @author shimomo
@@ -92,8 +93,11 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function byList(string $name, array $arguments): ?Collection
     {
-        if (empty($arguments)) {
-            return null;
+        if (($countArguments = count($arguments)) === 0) {
+            throw new InvalidArgumentException(
+                __METHOD__ . "() - Too few arguments to function " . self::class . "::by{$name}(), " .
+                "$countArguments passed and exactly 1 expected."
+            );
         }
 
         $prefectureKey = Str::snake($name);
@@ -122,8 +126,12 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function by(string $name, array $arguments): ?Collection
     {
-        if (empty($arguments)) {
-            return null;
+        if (($countArguments = count($arguments)) !== 1) {
+            $messageType = $countArguments === 0 ? 'few' : 'many';
+            throw new InvalidArgumentException(
+                __METHOD__ . "() - Too {$messageType} arguments to function " . self::class . "::by{$name}(), " .
+                "$countArguments passed and exactly 1 expected."
+            );
         }
 
         $prefectures = $this->prefectures->keyBy(Str::snake($name));

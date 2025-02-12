@@ -45,8 +45,6 @@ class ByListTest extends PrefectureTestCase
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $this->assertNull(Prefecture::byIdList());
-        $this->assertNull(Prefecture::byIdList([]));
         $this->assertNull(Prefecture::byIdList(48));
         $this->assertNull(Prefecture::byIdList([48]));
     }
@@ -139,9 +137,6 @@ class ByListTest extends PrefectureTestCase
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
-
-        $this->assertNull(Prefecture::byNameList());
-        $this->assertNull(Prefecture::byNameList([]));
     }
 
     /**
@@ -211,8 +206,6 @@ class ByListTest extends PrefectureTestCase
         $this->assertNull(Prefecture::byShortNameList(['東京都', '広島県']));
         $this->assertNull(Prefecture::byShortNameList('東京都', '広島県', '都道府県'));
         $this->assertNull(Prefecture::byShortNameList(['東京都', '広島県', '都道府県']));
-        $this->assertNull(Prefecture::byShortNameList());
-        $this->assertNull(Prefecture::byShortNameList([]));
     }
 
     /**
@@ -303,9 +296,6 @@ class ByListTest extends PrefectureTestCase
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
-
-        $this->assertNull(Prefecture::byHiraganaNameList());
-        $this->assertNull(Prefecture::byHiraganaNameList([]));
     }
 
     /**
@@ -396,9 +386,6 @@ class ByListTest extends PrefectureTestCase
         $this->assertSame(2, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
-
-        $this->assertNull(Prefecture::byKatakanaNameList());
-        $this->assertNull(Prefecture::byKatakanaNameList([]));
     }
 
     /**
@@ -461,8 +448,5 @@ class ByListTest extends PrefectureTestCase
         $this->assertSame(8, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
-
-        $this->assertNull(Prefecture::byEnglishNameList());
-        $this->assertNull(Prefecture::byEnglishNameList([]));
     }
 }
