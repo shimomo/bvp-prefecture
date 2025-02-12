@@ -22,7 +22,7 @@ class PrefectureCore implements PrefectureCoreInterface
      * @var array
      */
     private array $resolveMethodMap = [
-        '/^all(?!By)(.*)$/u' => 'all',
+        '/^(all)$/u' => 'all',
         '/^by(.+)List$/u' => 'byList',
         '/^by(.+)$/u' => 'by',
     ];
@@ -82,15 +82,6 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function all(string $name, array $arguments): Collection
     {
-        $snakeCaseName = Str::snake($name);
-        $filtered = $this->prefectures->filter(
-            fn($prefecture) => $prefecture->has($snakeCaseName)
-        );
-
-        if ($filtered->isNotEmpty()) {
-            return $this->prefectures->pluck($snakeCaseName);
-        }
-
         return $this->prefectures;
     }
 
