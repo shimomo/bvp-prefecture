@@ -10,6 +10,7 @@ return [
         'hiragana_name' => 'ほっかいどう',
         'katakana_name' => 'ホッカイドウ',
         'english_name' => 'hokkaido',
+        'region_name' => '北海道',
     ],
     [
         'id' => 2,
@@ -18,6 +19,7 @@ return [
         'hiragana_name' => 'あおもりけん',
         'katakana_name' => 'アオモリケン',
         'english_name' => 'aomori',
+        'region_name' => '東北',
     ],
     [
         'id' => 3,
@@ -26,6 +28,7 @@ return [
         'hiragana_name' => 'いわてけん',
         'katakana_name' => 'イワテケン',
         'english_name' => 'iwate',
+        'region_name' => '東北',
     ],
     [
         'id' => 4,
@@ -34,6 +37,7 @@ return [
         'hiragana_name' => 'みやぎけん',
         'katakana_name' => 'ミヤギケン',
         'english_name' => 'miyagi',
+        'region_name' => '東北',
     ],
     [
         'id' => 5,
@@ -42,6 +46,7 @@ return [
         'hiragana_name' => 'あきたけん',
         'katakana_name' => 'アキタケン',
         'english_name' => 'akita',
+        'region_name' => '東北',
     ],
     [
         'id' => 6,
@@ -50,6 +55,7 @@ return [
         'hiragana_name' => 'やまがたけん',
         'katakana_name' => 'ヤマガタケン',
         'english_name' => 'yamagata',
+        'region_name' => '東北',
     ],
     [
         'id' => 7,
@@ -58,6 +64,7 @@ return [
         'hiragana_name' => 'ふくしまけん',
         'katakana_name' => 'フクシマケン',
         'english_name' => 'fukushima',
+        'region_name' => '東北',
     ],
     [
         'id' => 8,
@@ -66,6 +73,7 @@ return [
         'hiragana_name' => 'いばらきけん',
         'katakana_name' => 'イバラキケン',
         'english_name' => 'ibaraki',
+        'region_name' => '関東',
     ],
     [
         'id' => 9,
@@ -74,6 +82,7 @@ return [
         'hiragana_name' => 'とちぎけん',
         'katakana_name' => 'トチギケン',
         'english_name' => 'tochigi',
+        'region_name' => '関東',
     ],
     [
         'id' => 10,
@@ -82,6 +91,7 @@ return [
         'hiragana_name' => 'ぐんまけん',
         'katakana_name' => 'グンマケン',
         'english_name' => 'gunma',
+        'region_name' => '関東',
     ],
     [
         'id' => 11,
@@ -90,6 +100,7 @@ return [
         'hiragana_name' => 'さいたまけん',
         'katakana_name' => 'サイタマケン',
         'english_name' => 'saitama',
+        'region_name' => '関東',
     ],
     [
         'id' => 12,
@@ -98,6 +109,7 @@ return [
         'hiragana_name' => 'ちばけん',
         'katakana_name' => 'チバケン',
         'english_name' => 'chiba',
+        'region_name' => '関東',
     ],
     [
         'id' => 13,
@@ -106,6 +118,7 @@ return [
         'hiragana_name' => 'とうきょうと',
         'katakana_name' => 'トウキョウト',
         'english_name' => 'tokyo',
+        'region_name' => '関東',
     ],
     [
         'id' => 14,
@@ -114,6 +127,7 @@ return [
         'hiragana_name' => 'かながわけん',
         'katakana_name' => 'カナガワケン',
         'english_name' => 'kanagawa',
+        'region_name' => '関東',
     ],
     [
         'id' => 15,
@@ -122,6 +136,7 @@ return [
         'hiragana_name' => 'にいがたけん',
         'katakana_name' => 'ニイガタケン',
         'english_name' => 'niigata',
+        'region_name' => '中部',
     ],
     [
         'id' => 16,
@@ -130,6 +145,7 @@ return [
         'hiragana_name' => 'とやまけん',
         'katakana_name' => 'トヤマケン',
         'english_name' => 'toyama',
+        'region_name' => '中部',
     ],
     [
         'id' => 17,
@@ -138,6 +154,7 @@ return [
         'hiragana_name' => 'いしかわけん',
         'katakana_name' => 'イシカワケン',
         'english_name' => 'ishikawa',
+        'region_name' => '中部',
     ],
     [
         'id' => 18,
@@ -146,6 +163,7 @@ return [
         'hiragana_name' => 'ふくいけん',
         'katakana_name' => 'フクイケン',
         'english_name' => 'fukui',
+        'region_name' => '中部',
     ],
     [
         'id' => 19,
@@ -154,6 +172,7 @@ return [
         'hiragana_name' => 'やまなしけん',
         'katakana_name' => 'ヤマナシケン',
         'english_name' => 'yamanashi',
+        'region_name' => '中部',
     ],
     [
         'id' => 20,
@@ -162,6 +181,7 @@ return [
         'hiragana_name' => 'ながのけん',
         'katakana_name' => 'ナガノケン',
         'english_name' => 'nagano',
+        'region_name' => '中部',
     ],
     [
         'id' => 21,
@@ -170,6 +190,7 @@ return [
         'hiragana_name' => 'ぎふけん',
         'katakana_name' => 'ギフケン',
         'english_name' => 'gifu',
+        'region_name' => '中部',
     ],
     [
         'id' => 22,
@@ -178,6 +199,7 @@ return [
         'hiragana_name' => 'しずおかけん',
         'katakana_name' => 'シズオカケン',
         'english_name' => 'shizuoka',
+        'region_name' => '中部',
     ],
     [
         'id' => 23,
@@ -186,6 +208,7 @@ return [
         'hiragana_name' => 'あいちけん',
         'katakana_name' => 'アイチケン',
         'english_name' => 'aichi',
+        'region_name' => '中部',
     ],
     [
         'id' => 24,
@@ -194,6 +217,7 @@ return [
         'hiragana_name' => 'みえけん',
         'katakana_name' => 'ミエケン',
         'english_name' => 'mie',
+        'region_name' => '関西',
     ],
     [
         'id' => 25,
@@ -202,6 +226,7 @@ return [
         'hiragana_name' => 'しがけん',
         'katakana_name' => 'シガケン',
         'english_name' => 'shiga',
+        'region_name' => '関西',
     ],
     [
         'id' => 26,
@@ -210,6 +235,7 @@ return [
         'hiragana_name' => 'きょうとふ',
         'katakana_name' => 'キョウトフ',
         'english_name' => 'kyoto',
+        'region_name' => '関西',
     ],
     [
         'id' => 27,
@@ -218,6 +244,7 @@ return [
         'hiragana_name' => 'おおさかふ',
         'katakana_name' => 'オオサカフ',
         'english_name' => 'osaka',
+        'region_name' => '関西',
     ],
     [
         'id' => 28,
@@ -226,6 +253,7 @@ return [
         'hiragana_name' => 'ひょうごけん',
         'katakana_name' => 'ヒョウゴケン',
         'english_name' => 'hyogo',
+        'region_name' => '関西',
     ],
     [
         'id' => 29,
@@ -234,6 +262,7 @@ return [
         'hiragana_name' => 'ならけん',
         'katakana_name' => 'ナラケン',
         'english_name' => 'nara',
+        'region_name' => '関西',
     ],
     [
         'id' => 30,
@@ -242,6 +271,7 @@ return [
         'hiragana_name' => 'わかやまけん',
         'katakana_name' => 'ワカヤマケン',
         'english_name' => 'wakayama',
+        'region_name' => '関西',
     ],
     [
         'id' => 31,
@@ -250,6 +280,7 @@ return [
         'hiragana_name' => 'とっとりけん',
         'katakana_name' => 'トットリケン',
         'english_name' => 'tottori',
+        'region_name' => '中国',
     ],
     [
         'id' => 32,
@@ -258,6 +289,7 @@ return [
         'hiragana_name' => 'しまねけん',
         'katakana_name' => 'シマネケン',
         'english_name' => 'shimane',
+        'region_name' => '中国',
     ],
     [
         'id' => 33,
@@ -266,6 +298,7 @@ return [
         'hiragana_name' => 'おかやまけん',
         'katakana_name' => 'オカヤマケン',
         'english_name' => 'okayama',
+        'region_name' => '中国',
     ],
     [
         'id' => 34,
@@ -274,6 +307,7 @@ return [
         'hiragana_name' => 'ひろしまけん',
         'katakana_name' => 'ヒロシマケン',
         'english_name' => 'hiroshima',
+        'region_name' => '中国',
     ],
     [
         'id' => 35,
@@ -282,6 +316,7 @@ return [
         'hiragana_name' => 'やまぐちけん',
         'katakana_name' => 'ヤマグチケン',
         'english_name' => 'yamaguchi',
+        'region_name' => '中国',
     ],
     [
         'id' => 36,
@@ -290,6 +325,7 @@ return [
         'hiragana_name' => 'とくしまけん',
         'katakana_name' => 'トクシマケン',
         'english_name' => 'tokushima',
+        'region_name' => '四国',
     ],
     [
         'id' => 37,
@@ -298,6 +334,7 @@ return [
         'hiragana_name' => 'かがわけん',
         'katakana_name' => 'カガワケン',
         'english_name' => 'kagawa',
+        'region_name' => '四国',
     ],
     [
         'id' => 38,
@@ -306,6 +343,7 @@ return [
         'hiragana_name' => 'えひめけん',
         'katakana_name' => 'エヒメケン',
         'english_name' => 'ehime',
+        'region_name' => '四国',
     ],
     [
         'id' => 39,
@@ -314,6 +352,7 @@ return [
         'hiragana_name' => 'こうちけん',
         'katakana_name' => 'コウチケン',
         'english_name' => 'kochi',
+        'region_name' => '四国',
     ],
     [
         'id' => 40,
@@ -322,6 +361,7 @@ return [
         'hiragana_name' => 'ふくおかけん',
         'katakana_name' => 'フクオカケン',
         'english_name' => 'fukuoka',
+        'region_name' => '九州',
     ],
     [
         'id' => 41,
@@ -330,6 +370,7 @@ return [
         'hiragana_name' => 'さがけん',
         'katakana_name' => 'サガケン',
         'english_name' => 'saga',
+        'region_name' => '九州',
     ],
     [
         'id' => 42,
@@ -338,6 +379,7 @@ return [
         'hiragana_name' => 'ながさきけん',
         'katakana_name' => 'ナガサキケン',
         'english_name' => 'nagasaki',
+        'region_name' => '九州',
     ],
     [
         'id' => 43,
@@ -346,6 +388,7 @@ return [
         'hiragana_name' => 'くまもとけん',
         'katakana_name' => 'クマモトケン',
         'english_name' => 'kumamoto',
+        'region_name' => '九州',
     ],
     [
         'id' => 44,
@@ -354,6 +397,7 @@ return [
         'hiragana_name' => 'おおいたけん',
         'katakana_name' => 'オオイタケン',
         'english_name' => 'oita',
+        'region_name' => '九州',
     ],
     [
         'id' => 45,
@@ -362,6 +406,7 @@ return [
         'hiragana_name' => 'みやざきけん',
         'katakana_name' => 'ミヤザキケン',
         'english_name' => 'miyazaki',
+        'region_name' => '九州',
     ],
     [
         'id' => 46,
@@ -370,6 +415,7 @@ return [
         'hiragana_name' => 'かごしまけん',
         'katakana_name' => 'カゴシマケン',
         'english_name' => 'kagoshima',
+        'region_name' => '九州',
     ],
     [
         'id' => 47,
@@ -378,5 +424,6 @@ return [
         'hiragana_name' => 'おきなわけん',
         'katakana_name' => 'オキナワケン',
         'english_name' => 'okinawa',
+        'region_name' => '九州',
     ],
 ];
