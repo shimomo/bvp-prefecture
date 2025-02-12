@@ -111,9 +111,9 @@ class PrefectureCore implements PrefectureCoreInterface
             return $exactMatchedPrefectures;
         }
 
-        $argumentCollection = collect($arguments);
+        $argumentsCollection = collect($arguments);
         $partialMatchedPrefectures = $prefectures->filter(
-            fn($value, $key) => $argumentCollection->filter(
+            fn($value, $key) => $argumentsCollection->filter(
                 fn($argument) => Str::contains($key, $argument)
             )->isNotEmpty()
         );
