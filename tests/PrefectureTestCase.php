@@ -52,6 +52,8 @@ abstract class PrefectureTestCase extends TestCase
         $this->assertSame($prefecture->hiraganaName, $collection->get('hiragana_name'));
         $this->assertSame($prefecture->katakanaName, $collection->get('katakana_name'));
         $this->assertSame($prefecture->englishName, $collection->get('english_name'));
+        $this->assertSame($prefecture->regionId, $collection->get('region_id'));
+        $this->assertSame($prefecture->regionName, $collection->get('region_name'));
     }
 
     /**
@@ -68,6 +70,8 @@ abstract class PrefectureTestCase extends TestCase
         $this->assertSame($prefecture->hiraganaName, $collection->get($keyName)->get('hiragana_name'));
         $this->assertSame($prefecture->katakanaName, $collection->get($keyName)->get('katakana_name'));
         $this->assertSame($prefecture->englishName, $collection->get($keyName)->get('english_name'));
+        $this->assertSame($prefecture->regionId, $collection->get($keyName)->get('region_id'));
+        $this->assertSame($prefecture->regionName, $collection->get($keyName)->get('region_name'));
     }
 
     /**
@@ -82,7 +86,9 @@ abstract class PrefectureTestCase extends TestCase
             $prefecture['short_name'],
             $prefecture['hiragana_name'],
             $prefecture['katakana_name'],
-            $prefecture['english_name']
+            $prefecture['english_name'],
+            $prefecture['region_id'],
+            $prefecture['region_name']
         );
     }
 }

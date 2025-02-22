@@ -74,4 +74,22 @@ class ByTest extends PrefectureTestCase
         $this->assertPrefecture($this->prefecturesDTO->get(9), Prefecture::byEnglishName('to'));
         $this->assertNull(Prefecture::byEnglishName('prefecture'));
     }
+
+    /**
+     * @return void
+     */
+    public function testByRegionId(): void
+    {
+        $this->assertPrefecture($this->prefecturesDTO->get(8), Prefecture::byRegionId(3));
+        $this->assertNull(Prefecture::byRegionId(9));
+    }
+
+    /**
+     * @return void
+     */
+    public function testByRegionName(): void
+    {
+        $this->assertPrefecture($this->prefecturesDTO->get(8), Prefecture::byRegionName('関東'));
+        $this->assertNull(Prefecture::byRegionName('prefecture'));
+    }
 }

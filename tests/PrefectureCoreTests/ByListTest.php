@@ -446,4 +446,72 @@ class ByListTest extends TestCase
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
     }
+
+    /**
+     * @return void
+     */
+    public function testByRegionIdList(): void
+    {
+        $collection = $this->prefecture->byRegionIdList(3);
+        $this->assertSame(7, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+
+        $collection = $this->prefecture->byRegionIdList([3]);
+        $this->assertSame(7, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+
+        $collection = $this->prefecture->byRegionIdList(3, 6);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionIdList([3, 6]);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionIdList(3, 6, 9);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionIdList([3, 6, 9]);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+    }
+
+    /**
+     * @return void
+     */
+    public function testByRegionNameList(): void
+    {
+        $collection = $this->prefecture->byRegionNameList('関東');
+        $this->assertSame(7, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+
+        $collection = $this->prefecture->byRegionNameList(['関東']);
+        $this->assertSame(7, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+
+        $collection = $this->prefecture->byRegionNameList('関東', '中国');
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionNameList(['関東', '中国']);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionNameList('関東', '中国', '都道府県');
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+
+        $collection = $this->prefecture->byRegionNameList(['関東', '中国', '都道府県']);
+        $this->assertSame(12, $collection->count());
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
+        $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
+    }
 }

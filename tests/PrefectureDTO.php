@@ -16,6 +16,8 @@ class PrefectureDTO
      * @param  string  $hiraganaName
      * @param  string  $katakanaName
      * @param  string  $englishName
+     * @param  string  $regionId
+     * @param  string  $regionName
      * @return void
      */
     public function __construct(
@@ -24,6 +26,8 @@ class PrefectureDTO
         public string $shortName,
         public string $hiraganaName,
         public string $katakanaName,
-        public string $englishName
+        public string $englishName,
+        public int $regionId,
+        public string $regionName
     ) {}
 }
