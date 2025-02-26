@@ -7,7 +7,7 @@ namespace BVP\Prefecture\Tests\PrefectureCoreTests;
 /**
  * @author shimomo
  */
-class AllTest extends TestCase
+final class AllTest extends TestCase
 {
     /**
      * @return void

@@ -11,7 +11,7 @@ use BVP\Prefecture\Tests\PrefectureTestCase;
 /**
  * @author shimomo
  */
-class ExceptionTest extends PrefectureTestCase
+final class ExceptionTest extends PrefectureTestCase
 {
     /**
      * @return void

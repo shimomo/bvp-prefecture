@@ -7,7 +7,7 @@ namespace BVP\Prefecture\Tests;
 /**
  * @author shimomo
  */
-class PrefectureDTO
+final class PrefectureDTO
 {
     /**
      * @param  int     $id

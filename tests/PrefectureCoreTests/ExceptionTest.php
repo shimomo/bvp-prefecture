@@ -9,7 +9,7 @@ use BadMethodCallException;
 /**
  * @author shimomo
  */
-class ExceptionTest extends TestCase
+final class ExceptionTest extends TestCase
 {
     /**
      * @return void

@@ -10,7 +10,7 @@ use BVP\Prefecture\Tests\PrefectureTestCase;
 /**
  * @author shimomo
  */
-class ByTest extends PrefectureTestCase
+final class ByTest extends PrefectureTestCase
 {
     /**
      * @return void
