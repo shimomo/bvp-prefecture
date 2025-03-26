@@ -78,10 +78,10 @@ final class ByTest extends PrefectureTestCase
     /**
      * @return void
      */
-    public function testByRegionId(): void
+    public function testByRegionNumber(): void
     {
-        $this->assertPrefecture($this->prefecturesDTO->get(8), Prefecture::byRegionId(3));
-        $this->assertNull(Prefecture::byRegionId(9));
+        $this->assertPrefecture($this->prefecturesDTO->get(8), Prefecture::byRegionNumber(3));
+        $this->assertNull(Prefecture::byRegionNumber(9));
     }
 
     /**

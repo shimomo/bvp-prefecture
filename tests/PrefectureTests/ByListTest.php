@@ -453,32 +453,32 @@ final class ByListTest extends PrefectureTestCase
     /**
      * @return void
      */
-    public function testByRegionIdList(): void
+    public function testByRegionNumberList(): void
     {
-        $collection = Prefecture::byRegionIdList(3);
+        $collection = Prefecture::byRegionNumberList(3);
         $this->assertSame(7, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::byRegionIdList([3]);
+        $collection = Prefecture::byRegionNumberList([3]);
         $this->assertSame(7, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
 
-        $collection = Prefecture::byRegionIdList(3, 6);
+        $collection = Prefecture::byRegionNumberList(3, 6);
         $this->assertSame(12, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::byRegionIdList([3, 6]);
+        $collection = Prefecture::byRegionNumberList([3, 6]);
         $this->assertSame(12, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::byRegionIdList(3, 6, 9);
+        $collection = Prefecture::byRegionNumberList(3, 6, 9);
         $this->assertSame(12, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
 
-        $collection = Prefecture::byRegionIdList([3, 6, 9]);
+        $collection = Prefecture::byRegionNumberList([3, 6, 9]);
         $this->assertSame(12, $collection->count());
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(13), $collection, 13);
         $this->assertPrefectureByKeyName($this->prefecturesDTO->get(34), $collection, 34);
