@@ -34,7 +34,7 @@ abstract class PrefectureTestCase extends TestCase
         if (! isset($this->prefecturesDTO)) {
             $this->prefecturesDTO = collect();
             foreach (require __DIR__ . '/../config/prefectures.php' as $prefecture) {
-                $this->prefecturesDTO->put($prefecture['id'], $this->createPrefectureDTO($prefecture));
+                $this->prefecturesDTO->put($prefecture['number'], $this->createPrefectureDTO($prefecture));
             }
         }
     }
@@ -46,7 +46,7 @@ abstract class PrefectureTestCase extends TestCase
      */
     protected function assertPrefecture(PrefectureDTO $prefecture, Collection $collection): void
     {
-        $this->assertSame($prefecture->id, $collection->get('id'));
+        $this->assertSame($prefecture->id, $collection->get('number'));
         $this->assertSame($prefecture->name, $collection->get('name'));
         $this->assertSame($prefecture->shortName, $collection->get('short_name'));
         $this->assertSame($prefecture->hiraganaName, $collection->get('hiragana_name'));
@@ -64,7 +64,7 @@ abstract class PrefectureTestCase extends TestCase
      */
     protected function assertPrefectureByKeyName(PrefectureDTO $prefecture, Collection $collection, string|int $keyName): void
     {
-        $this->assertSame($prefecture->id, $collection->get($keyName)->get('id'));
+        $this->assertSame($prefecture->id, $collection->get($keyName)->get('number'));
         $this->assertSame($prefecture->name, $collection->get($keyName)->get('name'));
         $this->assertSame($prefecture->shortName, $collection->get($keyName)->get('short_name'));
         $this->assertSame($prefecture->hiraganaName, $collection->get($keyName)->get('hiragana_name'));
@@ -81,7 +81,7 @@ abstract class PrefectureTestCase extends TestCase
     protected function createPrefectureDTO(array $prefecture): PrefectureDTO
     {
         return new PrefectureDTO(
-            $prefecture['id'],
+            $prefecture['number'],
             $prefecture['name'],
             $prefecture['short_name'],
             $prefecture['hiragana_name'],

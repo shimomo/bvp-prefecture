@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     [
-        'id' => 1,
+        'number' => 1,
         'name' => '北海道',
         'short_name' => '北海道',
         'hiragana_name' => 'ほっかいどう',
@@ -14,7 +14,7 @@ return [
         'region_name' => '北海道',
     ],
     [
-        'id' => 2,
+        'number' => 2,
         'name' => '青森県',
         'short_name' => '青森',
         'hiragana_name' => 'あおもりけん',
@@ -24,7 +24,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 3,
+        'number' => 3,
         'name' => '岩手県',
         'short_name' => '岩手',
         'hiragana_name' => 'いわてけん',
@@ -34,7 +34,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 4,
+        'number' => 4,
         'name' => '宮城県',
         'short_name' => '宮城',
         'hiragana_name' => 'みやぎけん',
@@ -44,7 +44,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 5,
+        'number' => 5,
         'name' => '秋田県',
         'short_name' => '秋田',
         'hiragana_name' => 'あきたけん',
@@ -54,7 +54,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 6,
+        'number' => 6,
         'name' => '山形県',
         'short_name' => '山形',
         'hiragana_name' => 'やまがたけん',
@@ -64,7 +64,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 7,
+        'number' => 7,
         'name' => '福島県',
         'short_name' => '福島',
         'hiragana_name' => 'ふくしまけん',
@@ -74,7 +74,7 @@ return [
         'region_name' => '東北',
     ],
     [
-        'id' => 8,
+        'number' => 8,
         'name' => '茨城県',
         'short_name' => '茨城',
         'hiragana_name' => 'いばらきけん',
@@ -84,7 +84,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 9,
+        'number' => 9,
         'name' => '栃木県',
         'short_name' => '栃木',
         'hiragana_name' => 'とちぎけん',
@@ -94,7 +94,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 10,
+        'number' => 10,
         'name' => '群馬県',
         'short_name' => '群馬',
         'hiragana_name' => 'ぐんまけん',
@@ -104,7 +104,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 11,
+        'number' => 11,
         'name' => '埼玉県',
         'short_name' => '埼玉',
         'hiragana_name' => 'さいたまけん',
@@ -114,7 +114,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 12,
+        'number' => 12,
         'name' => '千葉県',
         'short_name' => '千葉',
         'hiragana_name' => 'ちばけん',
@@ -124,7 +124,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 13,
+        'number' => 13,
         'name' => '東京都',
         'short_name' => '東京',
         'hiragana_name' => 'とうきょうと',
@@ -134,7 +134,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 14,
+        'number' => 14,
         'name' => '神奈川県',
         'short_name' => '神奈川',
         'hiragana_name' => 'かながわけん',
@@ -144,7 +144,7 @@ return [
         'region_name' => '関東',
     ],
     [
-        'id' => 15,
+        'number' => 15,
         'name' => '新潟県',
         'short_name' => '新潟',
         'hiragana_name' => 'にいがたけん',
@@ -154,7 +154,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 16,
+        'number' => 16,
         'name' => '富山県',
         'short_name' => '富山',
         'hiragana_name' => 'とやまけん',
@@ -164,7 +164,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 17,
+        'number' => 17,
         'name' => '石川県',
         'short_name' => '石川',
         'hiragana_name' => 'いしかわけん',
@@ -174,7 +174,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 18,
+        'number' => 18,
         'name' => '福井県',
         'short_name' => '福井',
         'hiragana_name' => 'ふくいけん',
@@ -184,7 +184,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 19,
+        'number' => 19,
         'name' => '山梨県',
         'short_name' => '山梨',
         'hiragana_name' => 'やまなしけん',
@@ -194,7 +194,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 20,
+        'number' => 20,
         'name' => '長野県',
         'short_name' => '長野',
         'hiragana_name' => 'ながのけん',
@@ -204,7 +204,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 21,
+        'number' => 21,
         'name' => '岐阜県',
         'short_name' => '岐阜',
         'hiragana_name' => 'ぎふけん',
@@ -214,7 +214,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 22,
+        'number' => 22,
         'name' => '静岡県',
         'short_name' => '静岡',
         'hiragana_name' => 'しずおかけん',
@@ -224,7 +224,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 23,
+        'number' => 23,
         'name' => '愛知県',
         'short_name' => '愛知',
         'hiragana_name' => 'あいちけん',
@@ -234,7 +234,7 @@ return [
         'region_name' => '中部',
     ],
     [
-        'id' => 24,
+        'number' => 24,
         'name' => '三重県',
         'short_name' => '三重',
         'hiragana_name' => 'みえけん',
@@ -244,7 +244,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 25,
+        'number' => 25,
         'name' => '滋賀県',
         'short_name' => '滋賀',
         'hiragana_name' => 'しがけん',
@@ -254,7 +254,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 26,
+        'number' => 26,
         'name' => '京都府',
         'short_name' => '京都',
         'hiragana_name' => 'きょうとふ',
@@ -264,7 +264,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 27,
+        'number' => 27,
         'name' => '大阪府',
         'short_name' => '大阪',
         'hiragana_name' => 'おおさかふ',
@@ -274,7 +274,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 28,
+        'number' => 28,
         'name' => '兵庫県',
         'short_name' => '兵庫',
         'hiragana_name' => 'ひょうごけん',
@@ -284,7 +284,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 29,
+        'number' => 29,
         'name' => '奈良県',
         'short_name' => '奈良',
         'hiragana_name' => 'ならけん',
@@ -294,7 +294,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 30,
+        'number' => 30,
         'name' => '和歌山県',
         'short_name' => '和歌山',
         'hiragana_name' => 'わかやまけん',
@@ -304,7 +304,7 @@ return [
         'region_name' => '近畿',
     ],
     [
-        'id' => 31,
+        'number' => 31,
         'name' => '鳥取県',
         'short_name' => '鳥取',
         'hiragana_name' => 'とっとりけん',
@@ -314,7 +314,7 @@ return [
         'region_name' => '中国',
     ],
     [
-        'id' => 32,
+        'number' => 32,
         'name' => '島根県',
         'short_name' => '島根',
         'hiragana_name' => 'しまねけん',
@@ -324,7 +324,7 @@ return [
         'region_name' => '中国',
     ],
     [
-        'id' => 33,
+        'number' => 33,
         'name' => '岡山県',
         'short_name' => '岡山',
         'hiragana_name' => 'おかやまけん',
@@ -334,7 +334,7 @@ return [
         'region_name' => '中国',
     ],
     [
-        'id' => 34,
+        'number' => 34,
         'name' => '広島県',
         'short_name' => '広島',
         'hiragana_name' => 'ひろしまけん',
@@ -344,7 +344,7 @@ return [
         'region_name' => '中国',
     ],
     [
-        'id' => 35,
+        'number' => 35,
         'name' => '山口県',
         'short_name' => '山口',
         'hiragana_name' => 'やまぐちけん',
@@ -354,7 +354,7 @@ return [
         'region_name' => '中国',
     ],
     [
-        'id' => 36,
+        'number' => 36,
         'name' => '徳島県',
         'short_name' => '徳島',
         'hiragana_name' => 'とくしまけん',
@@ -364,7 +364,7 @@ return [
         'region_name' => '四国',
     ],
     [
-        'id' => 37,
+        'number' => 37,
         'name' => '香川県',
         'short_name' => '香川',
         'hiragana_name' => 'かがわけん',
@@ -374,7 +374,7 @@ return [
         'region_name' => '四国',
     ],
     [
-        'id' => 38,
+        'number' => 38,
         'name' => '愛媛県',
         'short_name' => '愛媛',
         'hiragana_name' => 'えひめけん',
@@ -384,7 +384,7 @@ return [
         'region_name' => '四国',
     ],
     [
-        'id' => 39,
+        'number' => 39,
         'name' => '高知県',
         'short_name' => '高知',
         'hiragana_name' => 'こうちけん',
@@ -394,7 +394,7 @@ return [
         'region_name' => '四国',
     ],
     [
-        'id' => 40,
+        'number' => 40,
         'name' => '福岡県',
         'short_name' => '福岡',
         'hiragana_name' => 'ふくおかけん',
@@ -404,7 +404,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 41,
+        'number' => 41,
         'name' => '佐賀県',
         'short_name' => '佐賀',
         'hiragana_name' => 'さがけん',
@@ -414,7 +414,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 42,
+        'number' => 42,
         'name' => '長崎県',
         'short_name' => '長崎',
         'hiragana_name' => 'ながさきけん',
@@ -424,7 +424,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 43,
+        'number' => 43,
         'name' => '熊本県',
         'short_name' => '熊本',
         'hiragana_name' => 'くまもとけん',
@@ -434,7 +434,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 44,
+        'number' => 44,
         'name' => '大分県',
         'short_name' => '大分',
         'hiragana_name' => 'おおいたけん',
@@ -444,7 +444,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 45,
+        'number' => 45,
         'name' => '宮崎県',
         'short_name' => '宮崎',
         'hiragana_name' => 'みやざきけん',
@@ -454,7 +454,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 46,
+        'number' => 46,
         'name' => '鹿児島県',
         'short_name' => '鹿児島',
         'hiragana_name' => 'かごしまけん',
@@ -464,7 +464,7 @@ return [
         'region_name' => '九州',
     ],
     [
-        'id' => 47,
+        'number' => 47,
         'name' => '沖縄県',
         'short_name' => '沖縄',
         'hiragana_name' => 'おきなわけん',

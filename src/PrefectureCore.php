@@ -83,7 +83,7 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function all(string $name, array $arguments): Collection
     {
-        return $this->prefectures->keyby('id');
+        return $this->prefectures->keyby('number');
     }
 
     /**
@@ -105,7 +105,7 @@ class PrefectureCore implements PrefectureCoreInterface
         $prefectureKey = Str::snake($name);
         $exactMatchedPrefectures = $this->prefectures->whereIn($prefectureKey, $arguments);
         if ($exactMatchedPrefectures->isNotEmpty()) {
-            return $exactMatchedPrefectures->keyBy('id');
+            return $exactMatchedPrefectures->keyBy('number');
         }
 
         $argumentsCollection = collect($arguments);
@@ -115,7 +115,7 @@ class PrefectureCore implements PrefectureCoreInterface
             )->isNotEmpty()
         );
         if ($partialMatchedPrefectures->isNotEmpty()) {
-            return $partialMatchedPrefectures->keyBy('id');
+            return $partialMatchedPrefectures->keyBy('number');
         }
 
         return null;

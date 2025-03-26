@@ -12,10 +12,10 @@ final class ByTest extends TestCase
     /**
      * @return void
      */
-    public function testById(): void
+    public function testByNumber(): void
     {
-        $this->assertPrefecture($this->prefecturesDTO->get(13), $this->prefecture->byId(13));
-        $this->assertNull($this->prefecture->byId(48));
+        $this->assertPrefecture($this->prefecturesDTO->get(13), $this->prefecture->byNumber(13));
+        $this->assertNull($this->prefecture->byNumber(48));
     }
 
     /**
