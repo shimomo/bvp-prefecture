@@ -129,4 +129,34 @@ final class PrefectureTest extends TestCase
 
         Prefecture::invalid();
     }
+
+    /**
+     * @return void
+     */
+    public function testGetInstance(): void
+    {
+        Prefecture::resetInstance();
+        $this->assertInstanceOf(PrefectureInterface::class, Prefecture::getInstance());
+    }
+
+    /**
+     * @return void
+     */
+    public function testCreateInstance(): void
+    {
+        Prefecture::resetInstance();
+        $this->assertInstanceOf(PrefectureInterface::class, Prefecture::createInstance());
+    }
+
+    /**
+     * @return void
+     */
+    public function testResetInstance(): void
+    {
+        Prefecture::resetInstance();
+        $instance1 = Prefecture::getInstance();
+        Prefecture::resetInstance();
+        $instance2 = Prefecture::getInstance();
+        $this->assertNotSame($instance1, $instance2);
+    }
 }
