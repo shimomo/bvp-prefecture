@@ -43,15 +43,15 @@ class PrefectureCore implements PrefectureCoreInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      */
-    public function __call(string $name, array $arguments): ?Collection
+    public function __call(string $name, array $arguments): ?array
     {
         $this->prefectures ??= collect(
             require __DIR__ . '/../config/prefectures.php'
         )->recursive();
 
-        return $this->resolveMethod($name, $arguments);
+        return $this->resolveMethod($name, $arguments)?->toArray();
     }
 
     /**
