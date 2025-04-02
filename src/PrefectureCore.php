@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture;
 
-use BadMethodCallException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
@@ -71,7 +70,7 @@ class PrefectureCore implements PrefectureCoreInterface
             }
         }
 
-        throw new BadMethodCallException(
+        throw new \BadMethodCallException(
             __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
         );
     }
