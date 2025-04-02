@@ -1,12 +1,13 @@
 # Prefecture
 
-[![Build Status](https://github.com/BoatraceVentureProject/Prefecture/workflows/Tests/badge.svg)](https://github.com/BoatraceVentureProject/Prefecture/actions?query=workflow%3Atests)
-[![codecov](https://codecov.io/gh/BoatraceVentureProject/Prefecture/graph/badge.svg?token=mmXNGPTaz1)](https://codecov.io/gh/BoatraceVentureProject/Prefecture)
+[![Build Status](https://github.com/shimomo/bvp-prefecture/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions?query=workflow%3Atests)
+[![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
+[![PHP Version Require](http://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
 [![Latest Stable Version](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
 [![Latest Unstable Version](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture)
 [![License](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-The BVP Prefecture package is designed to retrieve information about Japanese prefectures using identifiers, including ID (Region) and Name (Short, Hiragana, Katakana, English, Region).
+The BVP Prefecture package is designed to retrieve information about Japanese prefectures using identifiers, including Number (Region) and Name (Short, Hiragana, Katakana, English, Region).
 
 ## Installation
 ```bash
