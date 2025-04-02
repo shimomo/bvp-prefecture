@@ -38,6 +38,10 @@ class PrefectureCore implements PrefectureCoreInterface
                 ? collect($value)->recursive()
                 : $value
         ));
+
+        $this->prefectures ??= collect(
+            require __DIR__ . '/../config/prefectures.php'
+        )->recursive();
     }
 
     /**
@@ -47,10 +51,6 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     public function __call(string $name, array $arguments): ?array
     {
-        $this->prefectures ??= collect(
-            require __DIR__ . '/../config/prefectures.php'
-        )->recursive();
-
         return $this->resolveMethod($name, $arguments)?->toArray();
     }
 
