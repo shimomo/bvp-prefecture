@@ -39,7 +39,7 @@ class PrefectureCore implements PrefectureCoreInterface
                 : $value
         ));
 
-        $this->prefectures ??= collect(
+        $this->prefectures = collect(
             require __DIR__ . '/../config/prefectures.php'
         )->recursive();
     }
