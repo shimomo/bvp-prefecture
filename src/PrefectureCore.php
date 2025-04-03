@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture;
 
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
+use Shimomo\Helper\Arr;
 
 /**
  * @author shimomo
@@ -13,9 +12,9 @@ use Illuminate\Support\Str;
 class PrefectureCore implements PrefectureCoreInterface
 {
     /**
-     * @var \Illuminate\Support\Collection
+     * @var array
      */
-    private Collection $prefectures;
+    private array $prefectures;
 
     /**
      * @var array
@@ -31,15 +30,7 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     public function __construct()
     {
-        Collection::macro('recursive', fn() => $this->map(
-            fn($value) => is_array($value) || is_object($value)
-                ? collect($value)->recursive()
-                : $value
-        ));
-
-        $this->prefectures = collect(
-            require __DIR__ . '/../config/prefectures.php'
-        )->recursive();
+        $this->prefectures = require __DIR__ . '/../config/prefectures.php';
     }
 
     /**
@@ -49,17 +40,17 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     public function __call(string $name, array $arguments): ?array
     {
-        return $this->resolveMethod($name, $arguments)?->toArray();
+        return $this->resolveMethod($name, $arguments);
     }
 
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      *
      * @throws \BadMethodCallException
      */
-    private function resolveMethod(string $name, array $arguments): ?Collection
+    private function resolveMethod(string $name, array $arguments): ?array
     {
         foreach ($this->resolveMethodMap as $pattern => $method) {
             if (preg_match($pattern, $name, $matches)) {
@@ -77,21 +68,21 @@ class PrefectureCore implements PrefectureCoreInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection
+     * @return array
      */
-    private function all(string $name, array $arguments): Collection
+    private function all(string $name, array $arguments): array
     {
-        return $this->prefectures->keyby('number');
+        return $this->arrayKeyBy($this->prefectures, 'number');
     }
 
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      *
      * @throws \InvalidArgumentException
      */
-    private function byList(string $name, array $arguments): ?Collection
+    private function byList(string $name, array $arguments): ?array
     {
         if (($countArguments = count($arguments)) === 0) {
             throw new \InvalidArgumentException(
@@ -100,20 +91,21 @@ class PrefectureCore implements PrefectureCoreInterface
             );
         }
 
-        $prefectureKey = Str::snake($name);
-        $exactMatchedPrefectures = $this->prefectures->whereIn($prefectureKey, $arguments);
-        if ($exactMatchedPrefectures->isNotEmpty()) {
-            return $exactMatchedPrefectures->keyBy('number');
+        $snakeCaseName = $this->snakeCase($name);
+        $flattenArguments = $this->arrayFlatten($arguments);
+        $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
+        if (!empty($exactMatchedPrefectures)) {
+            return $this->arrayKeyBy($exactMatchedPrefectures, 'number');
         }
 
-        $argumentsCollection = collect($arguments);
-        $partialMatchedPrefectures = $this->prefectures->filter(
-            fn($value, $key) => $argumentsCollection->filter(
-                fn($argument) => Str::contains($value->get($prefectureKey), $argument)
-            )->isNotEmpty()
-        );
-        if ($partialMatchedPrefectures->isNotEmpty()) {
-            return $partialMatchedPrefectures->keyBy('number');
+        $prefectures = $this->arrayKeyBy($this->prefectures, $snakeCaseName);
+        $partialMatchedPrefectures  = array_filter($prefectures, function ($value, $key) use ($flattenArguments) {
+            return !empty(array_filter($flattenArguments, function ($argument) use ($key) {
+                return str_contains((string) $key, (string) $argument);
+            }));
+        }, ARRAY_FILTER_USE_BOTH);
+        if (!empty($partialMatchedPrefectures)) {
+            return $this->arrayKeyBy($partialMatchedPrefectures, 'number');
         }
 
         return null;
@@ -122,11 +114,11 @@ class PrefectureCore implements PrefectureCoreInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return \Illuminate\Support\Collection|null
+     * @return array|null
      *
      * @throws \InvalidArgumentException
      */
-    private function by(string $name, array $arguments): ?Collection
+    private function by(string $name, array $arguments): ?array
     {
         if (($countArguments = count($arguments)) !== 1) {
             $messageType = $countArguments === 0 ? 'few' : 'many';
@@ -136,14 +128,51 @@ class PrefectureCore implements PrefectureCoreInterface
             );
         }
 
-        $prefectureKey = Str::snake($name);
-        $exactMatchedPrefecture = $this->prefectures->firstWhere($prefectureKey, $arguments[0]);
+        $snakeCaseName = $this->snakeCase($name);
+        $flattenArguments = $this->arrayFlatten($arguments);
+        $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, $flattenArguments[0]);
         if (!is_null($exactMatchedPrefecture)) {
             return $exactMatchedPrefecture;
         }
 
-        return $this->prefectures->filter(
-            fn($value, $key) => Str::contains($value->get($prefectureKey), $arguments[0])
-        )->first();
+        $prefectures = $this->arrayKeyBy($this->prefectures, $snakeCaseName);
+        $partialMatchedPrefectures = array_filter($prefectures, function ($value, $key) use ($flattenArguments) {
+            return str_contains((string) $key, (string) $flattenArguments[0]);
+        }, ARRAY_FILTER_USE_BOTH);
+
+        return reset($partialMatchedPrefectures);
+    }
+
+    /**
+     * @param  array  $array
+     * @return array
+     */
+    private function arrayFlatten(array $array): array
+    {
+        $response = [];
+        array_walk_recursive($array, function ($value) use (&$response) {
+            $response[] = $value;
+        });
+
+        return $response;
+    }
+
+    /**
+     * @param  array   $array
+     * @param  string  $key
+     * @return array
+     */
+    private function arrayKeyBy(array $array, string $key): array
+    {
+        return array_combine(array_column($array, $key), $array);
+    }
+
+    /**
+     * @param  string  $value
+     * @return string
+     */
+    private function snakeCase(string $value): string
+    {
+        return ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $value)), '_');
     }
 }
