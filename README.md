@@ -25,208 +25,199 @@ use BVP\Prefecture\Prefecture;
 
 ### For all()
 ```php
-$collection = Prefecture::all();
-var_dump($collection);
+$prefecture = Prefecture::all();
+
+var_dump($prefecture);
 /*------------------------------
-object(Illuminate\Support\Collection)#9 (2) {
-  ["items":protected]=>array(47) {
-    [1]=>object(Illuminate\Support\Collection)#13 (2) {
-      ["items":protected]=>array(6) {
-        ["id"]=>int(1)
-        ["name"]=>string(9) "北海道"
-        ["short_name"]=>string(9) "北海道"
-        ["hiragana_name"]=>string(18) "ほっかいどう"
-        ["katakana_name"]=>string(18) "ホッカイドウ"
-        ["english_name"]=>string(8) "hokkaido"
-        ["region_id"]=>int(1)
-        ["region_name"]=>string(6) "北海道"
-      }
-      ["escapeWhenCastingToString":protected]=>bool(false)
-    }
-    ...
-    [47]=>object(Illuminate\Support\Collection)#59 (2) {
-      ["items":protected]=>array(6) {
-        ["id"]=>int(47)
-        ["name"]=>string(9) "沖縄県"
-        ["short_name"]=>string(6) "沖縄"
-        ["hiragana_name"]=>string(18) "おきなわけん"
-        ["katakana_name"]=>string(18) "オキナワケン"
-        ["english_name"]=>string(7) "okinawa"
-        ["region_id"]=>int(8)
-        ["region_name"]=>string(6) "九州"
-      }
-      ["escapeWhenCastingToString":protected]=>bool(false)
-    }
+array(47) {
+  [1] => array(9) {
+    'number' => int(1)
+    'name' => string(9) "北海道"
+    'short_name' => string(9) "北海道"
+    'hiragana_name' => string(18) "ほっかいどう"
+    'katakana_name' => string(18) "ホッカイドウ"
+    'english_name' => string(8) "hokkaido"
+    'region_number' => int(1)
+    'region_name' => string(15) "北海道地方"
+    'region_short_name' => string(9) "北海道"
   }
-  ["escapeWhenCastingToString":protected]=>bool(false)
+  ...
+  [47] => array(9) {
+    'number' => int(47)
+    'name' => string(9) "沖縄県"
+    'short_name' => string(6) "沖縄"
+    'hiragana_name' => string(18) "おきなわけん"
+    'katakana_name' => string(18) "オキナワケン"
+    'english_name' => string(7) "okinawa"
+    'region_number' => int(8)
+    'region_name' => string(12) "九州地方"
+    'region_short_name' => string(6) "九州"
+  }
 }
 ------------------------------*/
 ```
 
 ### For byXxxList()
 ```php
-$collection = Prefecture::byIdList(13, 34);
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byNumberList(13, 34);
+// or $prefecture = Prefecture::byNumberList([13, 34]);
 
-$collection = Prefecture::byNameList('東京都', '広島県');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byNameList('東京都', '広島県');
+// or $prefecture = Prefecture::byNameList(['東京都', '広島県']);
 
-$collection = Prefecture::byShortNameList('東京', '広島');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byShortNameList('東京', '広島');
+// or $prefecture = Prefecture::byShortNameList(['東京', '広島']);
 
-$collection = Prefecture::byHiraganaNameList('とうきょうと', 'ひろしまけん');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byHiraganaNameList('とうきょうと', 'ひろしまけん');
+// or $prefecture = Prefecture::byHiraganaNameList(['とうきょうと', 'ひろしまけん']);
 
-$collection = Prefecture::byKatakanaNameList('トウキョウト', 'ヒロシマケン');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byKatakanaNameList('トウキョウト', 'ヒロシマケン');
+// or $prefecture = Prefecture::byKatakanaNameList(['トウキョウト', 'ヒロシマケン']);
 
-$collection = Prefecture::byEnglishNameList('tokyo', 'hiroshima');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byEnglishNameList('tokyo', 'hiroshima');
+// or $prefecture = Prefecture::byEnglishNameList(['tokyo', 'hiroshima']);
 
-$collection = Prefecture::byRegionIdList(3, 6);
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+var_dump($prefecture);
+/*------------------------------
+array(2) {
+  [13] => array(9) {
+    'number' => int(13)
+    'name' => string(9) "東京都"
+    'short_name' => string(6) "東京"
+    'hiragana_name' => string(18) "とうきょうと"
+    'katakana_name' => string(18) "トウキョウト"
+    'english_name' => string(5) "tokyo"
+    'region_number' => int(3)
+    'region_name' => string(12) "関東地方"
+    'region_short_name' => string(6) "関東"
+  }
+  [34] => array(9) {
+    'number' => int(34)
+    'name' => string(9) "広島県"
+    'short_name' => string(6) "広島"
+    'hiragana_name' => string(18) "ひろしまけん"
+    'katakana_name' => string(18) "ヒロシマケン"
+    'english_name' => string(9) "hiroshima"
+    'region_number' => int(6)
+    'region_name' => string(12) "中国地方"
+    'region_short_name' => string(6) "中国"
+  }
+}
+------------------------------*/
 
-$collection = Prefecture::byRegionNameList('関東', '中国');
-var_dump($collection->get(13)->get('id'));            // int(13)
-var_dump($collection->get(13)->get('name'));          // string(9) "東京都"
-var_dump($collection->get(13)->get('short_name'));    // string(6) "東京"
-var_dump($collection->get(13)->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get(13)->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get(13)->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get(13)->get('region_id'));     // int(3)
-var_dump($collection->get(13)->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byRegionNumberList(3, 6);
+// or $prefecture = Prefecture::byRegionNumberList([3, 6]);
+
+$prefecture = Prefecture::byRegionNameList('関東', '中国');
+// or $prefecture = Prefecture::byRegionNameList(['関東', '中国']);
+
+var_dump($prefecture);
+/*------------------------------
+array(12) {
+  [8] =>array(9) {
+    'number' => int(8)
+    'name' => string(9) "茨城県"
+    'short_name' => string(6) "茨城"
+    'hiragana_name' => string(18) "いばらきけん"
+    'katakana_name' => string(18) "イバラキケン"
+    'english_name' => string(7) "ibaraki"
+    'region_number' => int(3)
+    'region_name' => string(12) "関東地方"
+    'region_short_name' => string(6) "関東"
+  }
+  [9] => array(9) {
+    'number' => int(9)
+    'name' => string(9) "栃木県"
+    'short_name' => string(6) "栃木"
+    'hiragana_name' => string(15) "とちぎけん"
+    'katakana_name' => string(15) "トチギケン"
+    'english_name' => string(7) "tochigi"
+    'region_number' => int(3)
+    'region_name' => string(12) "関東地方"
+    'region_short_name' => string(6) "関東"
+  }
+  ...
+  [34] =>array(9) {
+    'number' => int(34)
+    'name' => string(9) "広島県"
+    'short_name' => string(6) "広島"
+    'hiragana_name' => string(18) "ひろしまけん"
+    'katakana_name' => string(18) "ヒロシマケン"
+    'english_name' => string(9) "hiroshima"
+    'region_number' => int(6)
+    'region_name' => string(12) "中国地方"
+    'region_short_name' => string(6) "中国"
+  }
+  [35] =>array(9) {
+    'number' => int(35)
+    'name' => string(9) "山口県"
+    'short_name' => string(6) "山口"
+    'hiragana_name' => string(18) "やまぐちけん"
+    'katakana_name' => string(18) "ヤマグチケン"
+    'english_name' => string(9) "yamaguchi"
+    'region_number' => int(6)
+    'region_name' => string(12) "中国地方"
+    'region_short_name' => string(6) "中国"
+  }
+}
+------------------------------*/
 ```
 
 ### For byXxx()
 ```php
-$collection = Prefecture::byId(13);
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byNumber(13);
+// or $prefecture = Prefecture::byNumber([13]);
 
-$collection = Prefecture::byName('東京都');
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byName('東京都');
+// or $prefecture = Prefecture::byName(['東京都']);
 
-$collection = Prefecture::byShortName('東京');
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byShortName('東京');
+// or $prefecture = Prefecture::byShortName(['東京']);
 
-$collection = Prefecture::byHiraganaName('とうきょうと');
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byHiraganaName('とうきょうと');
+// or $prefecture = Prefecture::byHiraganaName(['とうきょうと']);
 
-$collection = Prefecture::byKatakanaName('トウキョウト');
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byKatakanaName('トウキョウト');
+// or $prefecture = Prefecture::byKatakanaName(['トウキョウト']);
 
-$collection = Prefecture::byEnglishName('tokyo');
-var_dump($collection->get('id'));            // int(13)
-var_dump($collection->get('name'));          // string(9) "東京都"
-var_dump($collection->get('short_name'));    // string(6) "東京"
-var_dump($collection->get('hiragana_name')); // string(18) "とうきょうと"
-var_dump($collection->get('katakana_name')); // string(18) "トウキョウト"
-var_dump($collection->get('english_name'));  // string(5) "tokyo"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byEnglishName('tokyo');
+// or $prefecture = Prefecture::byEnglishName(['tokyo']);
 
-$collection = Prefecture::byRegionId(3);
-var_dump($collection->get('id'));            // int(8)
-var_dump($collection->get('name'));          // string(9) "茨城県"
-var_dump($collection->get('short_name'));    // string(6) "茨城"
-var_dump($collection->get('hiragana_name')); // string(18) "いばらきけん"
-var_dump($collection->get('katakana_name')); // string(18) "イバラキケン"
-var_dump($collection->get('english_name'));  // string(5) "ibaraki"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+var_dump($prefecture);
+/*------------------------------
+array(9) {
+  'number' => int(13)
+  'name' => string(9) "東京都"
+  'short_name' => string(6) "東京"
+  'hiragana_name' => string(18) "とうきょうと"
+  'katakana_name' => string(18) "トウキョウト"
+  'english_name' => string(5) "tokyo"
+  'region_number' => int(3)
+  'region_name' => string(12) "関東地方"
+  'region_short_name' => string(6) "関東"
+}
+------------------------------*/
 
-$collection = Prefecture::byRegionName('関東');
-var_dump($collection->get('id'));            // int(8)
-var_dump($collection->get('name'));          // string(9) "茨城県"
-var_dump($collection->get('short_name'));    // string(6) "茨城"
-var_dump($collection->get('hiragana_name')); // string(18) "いばらきけん"
-var_dump($collection->get('katakana_name')); // string(18) "イバラキケン"
-var_dump($collection->get('english_name'));  // string(5) "ibaraki"
-var_dump($collection->get('region_id'));     // int(3)
-var_dump($collection->get('region_name'));   // string(6) "関東"
+$prefecture = Prefecture::byRegionNumber(3);
+// or $prefecture = Prefecture::byRegionNumber([3]);
+
+$prefecture = Prefecture::byRegionName('関東');
+// or $prefecture = Prefecture::byRegionName(['関東']);
+
+var_dump($prefecture);
+/*------------------------------
+array(9) {
+  'number' => int(8)
+  'name' => string(9) "茨城県"
+  'short_name' => string(6) "茨城"
+  'hiragana_name' => string(18) "いばらきけん"
+  'katakana_name' => string(18) "イバラキケン"
+  'english_name' => string(7) "ibaraki"
+  'region_number' => int(3)
+  'region_name' => string(12) "関東地方"
+  'region_short_name' => string(6) "関東"
+}
+------------------------------*/
 ```
 
 ## License
