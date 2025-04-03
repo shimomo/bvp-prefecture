@@ -97,6 +97,12 @@ final class PrefectureCoreDataProvider
             ['arguments' => [['東京都', '広島県']], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
             ['arguments' => ['東京都', '広島県', '都道府県'], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
             ['arguments' => [['東京都', '広島県', '都道府県']], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
+            ['arguments' => ['東京'], 'expected' => PrefectureConstant::$tokyo],
+            ['arguments' => [['東京']], 'expected' => PrefectureConstant::$tokyo],
+            ['arguments' => ['東京', '広島'], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
+            ['arguments' => [['東京', '広島']], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
+            ['arguments' => ['東京', '広島', '都道府県'], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
+            ['arguments' => [['東京', '広島', '都道府県']], 'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
         ];
     }
 
