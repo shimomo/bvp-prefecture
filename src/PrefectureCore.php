@@ -98,10 +98,9 @@ class PrefectureCore implements PrefectureCoreInterface
             return $this->arrayKeyBy($exactMatchedPrefectures, 'number');
         }
 
-        $prefectures = $this->arrayKeyBy($this->prefectures, $snakeCaseName);
-        $partialMatchedPrefectures  = array_filter($prefectures, function ($value, $key) use ($flattenArguments) {
-            return !empty(array_filter($flattenArguments, function ($argument) use ($key) {
-                return str_contains((string) $key, (string) $argument);
+        $partialMatchedPrefectures  = array_filter($this->prefectures, function ($value, $key) use ($snakeCaseName, $flattenArguments) {
+            return !empty(array_filter($flattenArguments, function ($argument) use ($snakeCaseName, $value, $key) {
+                return str_contains((string) $value[$snakeCaseName], (string) $argument);
             }));
         }, ARRAY_FILTER_USE_BOTH);
         if (!empty($partialMatchedPrefectures)) {
@@ -135,9 +134,8 @@ class PrefectureCore implements PrefectureCoreInterface
             return $exactMatchedPrefecture;
         }
 
-        $prefectures = $this->arrayKeyBy($this->prefectures, $snakeCaseName);
-        $partialMatchedPrefectures = array_filter($prefectures, function ($value, $key) use ($flattenArguments) {
-            return str_contains((string) $key, (string) $flattenArguments[0]);
+        $partialMatchedPrefectures = array_filter($this->prefectures, function ($value, $key) use ($snakeCaseName, $flattenArguments) {
+            return str_contains((string) $value[$snakeCaseName], (string) $flattenArguments[0]);
         }, ARRAY_FILTER_USE_BOTH);
 
         return reset($partialMatchedPrefectures);
