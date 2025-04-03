@@ -452,6 +452,8 @@ final class PrefectureCoreDataProvider
         return [
             ['arguments' => ['東京都'], 'expected' => reset(PrefectureConstant::$tokyo)],
             ['arguments' => [['東京都']], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => ['東京'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['東京']], 'expected' => reset(PrefectureConstant::$tokyo)],
         ];
     }
 
