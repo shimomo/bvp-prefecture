@@ -217,6 +217,17 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionShortNameProvider')]
+    public function testByRegionShortName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byRegionShortName(...$arguments));
+    }
+
+    /**
      * @return void
      */
     public function testExceptionOnDoesNotExistMethodCall(): void

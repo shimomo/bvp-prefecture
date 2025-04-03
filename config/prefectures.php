@@ -11,7 +11,8 @@ return [
         'katakana_name' => 'ホッカイドウ',
         'english_name' => 'hokkaido',
         'region_number' => 1,
-        'region_name' => '北海道',
+        'region_name' => '北海道地方',
+        'region_short_name' => '北海道',
     ],
     [
         'number' => 2,
@@ -21,7 +22,8 @@ return [
         'katakana_name' => 'アオモリケン',
         'english_name' => 'aomori',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 3,
@@ -31,7 +33,8 @@ return [
         'katakana_name' => 'イワテケン',
         'english_name' => 'iwate',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 4,
@@ -41,7 +44,8 @@ return [
         'katakana_name' => 'ミヤギケン',
         'english_name' => 'miyagi',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 5,
@@ -51,7 +55,8 @@ return [
         'katakana_name' => 'アキタケン',
         'english_name' => 'akita',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 6,
@@ -61,7 +66,8 @@ return [
         'katakana_name' => 'ヤマガタケン',
         'english_name' => 'yamagata',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 7,
@@ -71,7 +77,8 @@ return [
         'katakana_name' => 'フクシマケン',
         'english_name' => 'fukushima',
         'region_number' => 2,
-        'region_name' => '東北',
+        'region_name' => '東北地方',
+        'region_short_name' => '東北',
     ],
     [
         'number' => 8,
@@ -81,7 +88,8 @@ return [
         'katakana_name' => 'イバラキケン',
         'english_name' => 'ibaraki',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 9,
@@ -91,7 +99,8 @@ return [
         'katakana_name' => 'トチギケン',
         'english_name' => 'tochigi',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 10,
@@ -101,7 +110,8 @@ return [
         'katakana_name' => 'グンマケン',
         'english_name' => 'gunma',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 11,
@@ -111,7 +121,8 @@ return [
         'katakana_name' => 'サイタマケン',
         'english_name' => 'saitama',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 12,
@@ -121,7 +132,8 @@ return [
         'katakana_name' => 'チバケン',
         'english_name' => 'chiba',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 13,
@@ -131,7 +143,8 @@ return [
         'katakana_name' => 'トウキョウト',
         'english_name' => 'tokyo',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 14,
@@ -141,7 +154,8 @@ return [
         'katakana_name' => 'カナガワケン',
         'english_name' => 'kanagawa',
         'region_number' => 3,
-        'region_name' => '関東',
+        'region_name' => '関東地方',
+        'region_short_name' => '関東',
     ],
     [
         'number' => 15,
@@ -151,7 +165,8 @@ return [
         'katakana_name' => 'ニイガタケン',
         'english_name' => 'niigata',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 16,
@@ -161,7 +176,8 @@ return [
         'katakana_name' => 'トヤマケン',
         'english_name' => 'toyama',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 17,
@@ -171,7 +187,8 @@ return [
         'katakana_name' => 'イシカワケン',
         'english_name' => 'ishikawa',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 18,
@@ -181,7 +198,8 @@ return [
         'katakana_name' => 'フクイケン',
         'english_name' => 'fukui',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 19,
@@ -191,7 +209,8 @@ return [
         'katakana_name' => 'ヤマナシケン',
         'english_name' => 'yamanashi',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 20,
@@ -201,7 +220,8 @@ return [
         'katakana_name' => 'ナガノケン',
         'english_name' => 'nagano',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 21,
@@ -211,7 +231,8 @@ return [
         'katakana_name' => 'ギフケン',
         'english_name' => 'gifu',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 22,
@@ -221,7 +242,8 @@ return [
         'katakana_name' => 'シズオカケン',
         'english_name' => 'shizuoka',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 23,
@@ -231,7 +253,8 @@ return [
         'katakana_name' => 'アイチケン',
         'english_name' => 'aichi',
         'region_number' => 4,
-        'region_name' => '中部',
+        'region_name' => '中部地方',
+        'region_short_name' => '中部',
     ],
     [
         'number' => 24,
@@ -241,7 +264,8 @@ return [
         'katakana_name' => 'ミエケン',
         'english_name' => 'mie',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 25,
@@ -251,7 +275,8 @@ return [
         'katakana_name' => 'シガケン',
         'english_name' => 'shiga',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 26,
@@ -261,7 +286,8 @@ return [
         'katakana_name' => 'キョウトフ',
         'english_name' => 'kyoto',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 27,
@@ -271,7 +297,8 @@ return [
         'katakana_name' => 'オオサカフ',
         'english_name' => 'osaka',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 28,
@@ -281,7 +308,8 @@ return [
         'katakana_name' => 'ヒョウゴケン',
         'english_name' => 'hyogo',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 29,
@@ -291,7 +319,8 @@ return [
         'katakana_name' => 'ナラケン',
         'english_name' => 'nara',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 30,
@@ -301,7 +330,8 @@ return [
         'katakana_name' => 'ワカヤマケン',
         'english_name' => 'wakayama',
         'region_number' => 5,
-        'region_name' => '近畿',
+        'region_name' => '近畿地方',
+        'region_short_name' => '近畿',
     ],
     [
         'number' => 31,
@@ -311,7 +341,8 @@ return [
         'katakana_name' => 'トットリケン',
         'english_name' => 'tottori',
         'region_number' => 6,
-        'region_name' => '中国',
+        'region_name' => '中国地方',
+        'region_short_name' => '中国',
     ],
     [
         'number' => 32,
@@ -321,7 +352,8 @@ return [
         'katakana_name' => 'シマネケン',
         'english_name' => 'shimane',
         'region_number' => 6,
-        'region_name' => '中国',
+        'region_name' => '中国地方',
+        'region_short_name' => '中国',
     ],
     [
         'number' => 33,
@@ -331,7 +363,8 @@ return [
         'katakana_name' => 'オカヤマケン',
         'english_name' => 'okayama',
         'region_number' => 6,
-        'region_name' => '中国',
+        'region_name' => '中国地方',
+        'region_short_name' => '中国',
     ],
     [
         'number' => 34,
@@ -341,7 +374,8 @@ return [
         'katakana_name' => 'ヒロシマケン',
         'english_name' => 'hiroshima',
         'region_number' => 6,
-        'region_name' => '中国',
+        'region_name' => '中国地方',
+        'region_short_name' => '中国',
     ],
     [
         'number' => 35,
@@ -351,7 +385,8 @@ return [
         'katakana_name' => 'ヤマグチケン',
         'english_name' => 'yamaguchi',
         'region_number' => 6,
-        'region_name' => '中国',
+        'region_name' => '中国地方',
+        'region_short_name' => '中国',
     ],
     [
         'number' => 36,
@@ -361,7 +396,8 @@ return [
         'katakana_name' => 'トクシマケン',
         'english_name' => 'tokushima',
         'region_number' => 7,
-        'region_name' => '四国',
+        'region_name' => '四国地方',
+        'region_short_name' => '四国',
     ],
     [
         'number' => 37,
@@ -371,7 +407,8 @@ return [
         'katakana_name' => 'カガワケン',
         'english_name' => 'kagawa',
         'region_number' => 7,
-        'region_name' => '四国',
+        'region_name' => '四国地方',
+        'region_short_name' => '四国',
     ],
     [
         'number' => 38,
@@ -381,7 +418,8 @@ return [
         'katakana_name' => 'エヒメケン',
         'english_name' => 'ehime',
         'region_number' => 7,
-        'region_name' => '四国',
+        'region_name' => '四国地方',
+        'region_short_name' => '四国',
     ],
     [
         'number' => 39,
@@ -391,7 +429,8 @@ return [
         'katakana_name' => 'コウチケン',
         'english_name' => 'kochi',
         'region_number' => 7,
-        'region_name' => '四国',
+        'region_name' => '四国地方',
+        'region_short_name' => '四国',
     ],
     [
         'number' => 40,
@@ -401,7 +440,8 @@ return [
         'katakana_name' => 'フクオカケン',
         'english_name' => 'fukuoka',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 41,
@@ -411,7 +451,8 @@ return [
         'katakana_name' => 'サガケン',
         'english_name' => 'saga',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 42,
@@ -421,7 +462,8 @@ return [
         'katakana_name' => 'ナガサキケン',
         'english_name' => 'nagasaki',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 43,
@@ -431,7 +473,8 @@ return [
         'katakana_name' => 'クマモトケン',
         'english_name' => 'kumamoto',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 44,
@@ -441,7 +484,8 @@ return [
         'katakana_name' => 'オオイタケン',
         'english_name' => 'oita',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 45,
@@ -451,7 +495,8 @@ return [
         'katakana_name' => 'ミヤザキケン',
         'english_name' => 'miyazaki',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 46,
@@ -461,7 +506,8 @@ return [
         'katakana_name' => 'カゴシマケン',
         'english_name' => 'kagoshima',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
     [
         'number' => 47,
@@ -471,6 +517,7 @@ return [
         'katakana_name' => 'オキナワケン',
         'english_name' => 'okinawa',
         'region_number' => 8,
-        'region_name' => '九州',
+        'region_name' => '九州地方',
+        'region_short_name' => '九州',
     ],
 ];

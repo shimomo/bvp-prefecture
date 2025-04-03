@@ -256,6 +256,95 @@ final class PrefectureDataProvider
     {
         return [
             [
+                'arguments' => ['関東地方'],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa,
+            ],
+            [
+                'arguments' => [['関東地方']],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa,
+            ],
+            [
+                'arguments' => ['関東地方', '中国地方'],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa +
+                              PrefectureConstant::$tottori +
+                              PrefectureConstant::$shimane +
+                              PrefectureConstant::$okayama +
+                              PrefectureConstant::$hiroshima +
+                              PrefectureConstant::$yamaguchi,
+            ],
+            [
+                'arguments' => [['関東地方', '中国地方']],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa +
+                              PrefectureConstant::$tottori +
+                              PrefectureConstant::$shimane +
+                              PrefectureConstant::$okayama +
+                              PrefectureConstant::$hiroshima +
+                              PrefectureConstant::$yamaguchi,
+            ],
+            [
+                'arguments' => ['関東地方', '中国地方', '地域'],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa +
+                              PrefectureConstant::$tottori +
+                              PrefectureConstant::$shimane +
+                              PrefectureConstant::$okayama +
+                              PrefectureConstant::$hiroshima +
+                              PrefectureConstant::$yamaguchi,
+            ],
+            [
+                'arguments' => [['関東地方', '中国地方', '地域']],
+                'expected' => PrefectureConstant::$ibaraki +
+                              PrefectureConstant::$tochigi +
+                              PrefectureConstant::$gunma +
+                              PrefectureConstant::$saitama +
+                              PrefectureConstant::$chiba +
+                              PrefectureConstant::$tokyo +
+                              PrefectureConstant::$kanagawa +
+                              PrefectureConstant::$tottori +
+                              PrefectureConstant::$shimane +
+                              PrefectureConstant::$okayama +
+                              PrefectureConstant::$hiroshima +
+                              PrefectureConstant::$yamaguchi,
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byRegionShortNameListProvider(): array
+    {
+        return [
+            [
                 'arguments' => ['関東'],
                 'expected' => PrefectureConstant::$ibaraki +
                               PrefectureConstant::$tochigi +
@@ -419,6 +508,17 @@ final class PrefectureDataProvider
      * @return array
      */
     public static function byRegionNameProvider(): array
+    {
+        return [
+            ['arguments' => ['関東地方'], 'expected' => reset(PrefectureConstant::$ibaraki)],
+            ['arguments' => [['関東地方']], 'expected' => reset(PrefectureConstant::$ibaraki)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byRegionShortNameProvider(): array
     {
         return [
             ['arguments' => ['関東'], 'expected' => reset(PrefectureConstant::$ibaraki)],

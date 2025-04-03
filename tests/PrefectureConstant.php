@@ -21,7 +21,8 @@ final class PrefectureConstant
             'katakana_name' => 'ホッカイドウ',
             'english_name' => 'hokkaido',
             'region_number' => 1,
-            'region_name' => '北海道',
+            'region_name' => '北海道地方',
+            'region_short_name' => '北海道',
         ],
     ];
 
@@ -37,7 +38,8 @@ final class PrefectureConstant
             'katakana_name' => 'アオモリケン',
             'english_name' => 'aomori',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -53,7 +55,8 @@ final class PrefectureConstant
             'katakana_name' => 'イワテケン',
             'english_name' => 'iwate',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -69,7 +72,8 @@ final class PrefectureConstant
             'katakana_name' => 'ミヤギケン',
             'english_name' => 'miyagi',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -85,7 +89,8 @@ final class PrefectureConstant
             'katakana_name' => 'アキタケン',
             'english_name' => 'akita',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -101,7 +106,8 @@ final class PrefectureConstant
             'katakana_name' => 'ヤマガタケン',
             'english_name' => 'yamagata',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -117,7 +123,8 @@ final class PrefectureConstant
             'katakana_name' => 'フクシマケン',
             'english_name' => 'fukushima',
             'region_number' => 2,
-            'region_name' => '東北',
+            'region_name' => '東北地方',
+            'region_short_name' => '東北',
         ],
     ];
 
@@ -133,7 +140,8 @@ final class PrefectureConstant
             'katakana_name' => 'イバラキケン',
             'english_name' => 'ibaraki',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -149,7 +157,8 @@ final class PrefectureConstant
             'katakana_name' => 'トチギケン',
             'english_name' => 'tochigi',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -165,7 +174,8 @@ final class PrefectureConstant
             'katakana_name' => 'グンマケン',
             'english_name' => 'gunma',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -181,7 +191,8 @@ final class PrefectureConstant
             'katakana_name' => 'サイタマケン',
             'english_name' => 'saitama',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -197,7 +208,8 @@ final class PrefectureConstant
             'katakana_name' => 'チバケン',
             'english_name' => 'chiba',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -213,7 +225,8 @@ final class PrefectureConstant
             'katakana_name' => 'トウキョウト',
             'english_name' => 'tokyo',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
 
@@ -229,7 +242,8 @@ final class PrefectureConstant
             'katakana_name' => 'カナガワケン',
             'english_name' => 'kanagawa',
             'region_number' => 3,
-            'region_name' => '関東',
+            'region_name' => '関東地方',
+            'region_short_name' => '関東',
         ],
     ];
     /**
@@ -244,7 +258,8 @@ final class PrefectureConstant
             'katakana_name' => 'ニイガタケン',
             'english_name' => 'niigata',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -260,7 +275,8 @@ final class PrefectureConstant
             'katakana_name' => 'トヤマケン',
             'english_name' => 'toyama',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -276,7 +292,8 @@ final class PrefectureConstant
             'katakana_name' => 'イシカワケン',
             'english_name' => 'ishikawa',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -292,7 +309,8 @@ final class PrefectureConstant
             'katakana_name' => 'フクイケン',
             'english_name' => 'fukui',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -308,7 +326,8 @@ final class PrefectureConstant
             'katakana_name' => 'ヤマナシケン',
             'english_name' => 'yamanashi',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -324,7 +343,8 @@ final class PrefectureConstant
             'katakana_name' => 'ナガノケン',
             'english_name' => 'nagano',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -340,7 +360,8 @@ final class PrefectureConstant
             'katakana_name' => 'ギフケン',
             'english_name' => 'gifu',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -356,7 +377,8 @@ final class PrefectureConstant
             'katakana_name' => 'シズオカケン',
             'english_name' => 'shizuoka',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -372,7 +394,8 @@ final class PrefectureConstant
             'katakana_name' => 'アイチケン',
             'english_name' => 'aichi',
             'region_number' => 4,
-            'region_name' => '中部',
+            'region_name' => '中部地方',
+            'region_short_name' => '中部',
         ],
     ];
 
@@ -388,7 +411,8 @@ final class PrefectureConstant
             'katakana_name' => 'ミエケン',
             'english_name' => 'mie',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -404,7 +428,8 @@ final class PrefectureConstant
             'katakana_name' => 'シガケン',
             'english_name' => 'shiga',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -420,7 +445,8 @@ final class PrefectureConstant
             'katakana_name' => 'キョウトフ',
             'english_name' => 'kyoto',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -436,7 +462,8 @@ final class PrefectureConstant
             'katakana_name' => 'オオサカフ',
             'english_name' => 'osaka',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -452,7 +479,8 @@ final class PrefectureConstant
             'katakana_name' => 'ヒョウゴケン',
             'english_name' => 'hyogo',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -468,7 +496,8 @@ final class PrefectureConstant
             'katakana_name' => 'ナラケン',
             'english_name' => 'nara',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -484,7 +513,8 @@ final class PrefectureConstant
             'katakana_name' => 'ワカヤマケン',
             'english_name' => 'wakayama',
             'region_number' => 5,
-            'region_name' => '近畿',
+            'region_name' => '近畿地方',
+            'region_short_name' => '近畿',
         ],
     ];
 
@@ -500,7 +530,8 @@ final class PrefectureConstant
             'katakana_name' => 'トットリケン',
             'english_name' => 'tottori',
             'region_number' => 6,
-            'region_name' => '中国',
+            'region_name' => '中国地方',
+            'region_short_name' => '中国',
         ],
     ];
 
@@ -516,7 +547,8 @@ final class PrefectureConstant
             'katakana_name' => 'シマネケン',
             'english_name' => 'shimane',
             'region_number' => 6,
-            'region_name' => '中国',
+            'region_name' => '中国地方',
+            'region_short_name' => '中国',
         ],
     ];
 
@@ -532,7 +564,8 @@ final class PrefectureConstant
             'katakana_name' => 'オカヤマケン',
             'english_name' => 'okayama',
             'region_number' => 6,
-            'region_name' => '中国',
+            'region_name' => '中国地方',
+            'region_short_name' => '中国',
         ],
     ];
 
@@ -548,7 +581,8 @@ final class PrefectureConstant
             'katakana_name' => 'ヒロシマケン',
             'english_name' => 'hiroshima',
             'region_number' => 6,
-            'region_name' => '中国',
+            'region_name' => '中国地方',
+            'region_short_name' => '中国',
         ],
     ];
 
@@ -564,7 +598,8 @@ final class PrefectureConstant
             'katakana_name' => 'ヤマグチケン',
             'english_name' => 'yamaguchi',
             'region_number' => 6,
-            'region_name' => '中国',
+            'region_name' => '中国地方',
+            'region_short_name' => '中国',
         ],
     ];
 
@@ -580,7 +615,8 @@ final class PrefectureConstant
             'katakana_name' => 'トクシマケン',
             'english_name' => 'tokushima',
             'region_number' => 7,
-            'region_name' => '四国',
+            'region_name' => '四国地方',
+            'region_short_name' => '四国',
         ],
     ];
 
@@ -596,7 +632,8 @@ final class PrefectureConstant
             'katakana_name' => 'カガワケン',
             'english_name' => 'kagawa',
             'region_number' => 7,
-            'region_name' => '四国',
+            'region_name' => '四国地方',
+            'region_short_name' => '四国',
         ],
     ];
 
@@ -612,7 +649,8 @@ final class PrefectureConstant
             'katakana_name' => 'エヒメケン',
             'english_name' => 'ehime',
             'region_number' => 7,
-            'region_name' => '四国',
+            'region_name' => '四国地方',
+            'region_short_name' => '四国',
         ],
     ];
 
@@ -628,7 +666,8 @@ final class PrefectureConstant
             'katakana_name' => 'コウチケン',
             'english_name' => 'kochi',
             'region_number' => 7,
-            'region_name' => '四国',
+            'region_name' => '四国地方',
+            'region_short_name' => '四国',
         ],
     ];
 
@@ -644,7 +683,8 @@ final class PrefectureConstant
             'katakana_name' => 'フクオカケン',
             'english_name' => 'fukuoka',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -660,7 +700,8 @@ final class PrefectureConstant
             'katakana_name' => 'サガケン',
             'english_name' => 'saga',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -676,7 +717,8 @@ final class PrefectureConstant
             'katakana_name' => 'ナガサキケン',
             'english_name' => 'nagasaki',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -692,7 +734,8 @@ final class PrefectureConstant
             'katakana_name' => 'クマモトケン',
             'english_name' => 'kumamoto',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -708,7 +751,8 @@ final class PrefectureConstant
             'katakana_name' => 'オオイタケン',
             'english_name' => 'oita',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -724,7 +768,8 @@ final class PrefectureConstant
             'katakana_name' => 'ミヤザキケン',
             'english_name' => 'miyazaki',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -740,7 +785,8 @@ final class PrefectureConstant
             'katakana_name' => 'カゴシマケン',
             'english_name' => 'kagoshima',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 
@@ -756,7 +802,8 @@ final class PrefectureConstant
             'katakana_name' => 'オキナワケン',
             'english_name' => 'okinawa',
             'region_number' => 8,
-            'region_name' => '九州',
+            'region_name' => '九州地方',
+            'region_short_name' => '九州',
         ],
     ];
 }
