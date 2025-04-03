@@ -240,4 +240,34 @@ final class PrefectureCoreTest extends TestCase
 
         $this->prefecture->invalid();
     }
+
+    /**
+     * @return void
+     */
+    public function testExceptionOnTooFewArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Prefecture\PrefectureCore::by() - " .
+            "Too few arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "0 passed and exactly 1 expected."
+        );
+
+        $this->prefecture->byNumber();
+    }
+
+    /**
+     * @return void
+     */
+    public function testExceptionOnTooManyArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Prefecture\PrefectureCore::by() - " .
+            "Too many arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "2 passed and exactly 1 expected."
+        );
+
+        $this->prefecture->byNumber(12, 34);
+    }
 }

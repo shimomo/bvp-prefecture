@@ -243,6 +243,36 @@ final class PrefectureTest extends TestCase
     /**
      * @return void
      */
+    public function testExceptionOnTooFewArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Prefecture\PrefectureCore::by() - " .
+            "Too few arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "0 passed and exactly 1 expected."
+        );
+
+        Prefecture::byNumber();
+    }
+
+    /**
+     * @return void
+     */
+    public function testExceptionOnTooManyArguments(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            "BVP\Prefecture\PrefectureCore::by() - " .
+            "Too many arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "2 passed and exactly 1 expected."
+        );
+
+        Prefecture::byNumber(12, 34);
+    }
+
+    /**
+     * @return void
+     */
     public function testGetInstance(): void
     {
         Prefecture::resetInstance();
