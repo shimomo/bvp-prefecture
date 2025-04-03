@@ -337,4 +337,92 @@ final class PrefectureDataProvider
             ],
         ];
     }
+
+    /**
+     * @return array
+     */
+    public static function byNumberProvider(): array
+    {
+        return [
+            ['arguments' => [13], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [[13]], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byNameProvider(): array
+    {
+        return [
+            ['arguments' => ['東京都'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['東京都']], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byShortNameProvider(): array
+    {
+        return [
+            ['arguments' => ['東京'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['東京']], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byHiraganaNameProvider(): array
+    {
+        return [
+            ['arguments' => ['とうきょうと'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['とうきょうと']], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byKatakanaNameProvider(): array
+    {
+        return [
+            ['arguments' => ['トウキョウト'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['トウキョウト']], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byEnglishNameProvider(): array
+    {
+        return [
+            ['arguments' => ['tokyo'], 'expected' => reset(PrefectureConstant::$tokyo)],
+            ['arguments' => [['tokyo']], 'expected' => reset(PrefectureConstant::$tokyo)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byRegionNumberProvider(): array
+    {
+        return [
+            ['arguments' => [3], 'expected' => reset(PrefectureConstant::$ibaraki)],
+            ['arguments' => [[3]], 'expected' => reset(PrefectureConstant::$ibaraki)],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function byRegionNameProvider(): array
+    {
+        return [
+            ['arguments' => ['関東'], 'expected' => reset(PrefectureConstant::$ibaraki)],
+            ['arguments' => [['関東']], 'expected' => reset(PrefectureConstant::$ibaraki)],
+        ];
+    }
 }

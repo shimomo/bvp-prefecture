@@ -129,6 +129,94 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNumberProvider')]
+    public function testByNumber(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byNumber(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNameProvider')]
+    public function testByName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byName(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byShortNameProvider')]
+    public function testByShortName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byShortName(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byHiraganaNameProvider')]
+    public function testByHiraganaName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byHiraganaName(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byKatakanaNameProvider')]
+    public function testByKatakanaName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byKatakanaName(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byEnglishNameProvider')]
+    public function testByEnglishName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byEnglishName(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNumberProvider')]
+    public function testByRegionNumber(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byRegionNumber(...$arguments));
+    }
+
+    /**
+     * @param  array  $arguments
+     * @param  array  $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNameProvider')]
+    public function testByRegionName(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byRegionName(...$arguments));
+    }
+
+    /**
      * @return void
      */
     public function testExceptionOnDoesNotExistMethodCall(): void
