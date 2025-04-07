@@ -138,7 +138,8 @@ class PrefectureCore implements PrefectureCoreInterface
             return str_contains((string) $prefecture[$snakeCaseName], (string) $flattenArguments[0]);
         }, ARRAY_FILTER_USE_BOTH);
 
-        return reset($partialMatchedPrefectures);
+        $partialMatchedPrefecture = reset($partialMatchedPrefectures);
+        return $partialMatchedPrefecture === false ? null : $partialMatchedPrefecture;
     }
 
     /**
