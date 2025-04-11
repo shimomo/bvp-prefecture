@@ -51,7 +51,7 @@ Each method also supports [`List`](#filter-by-multiple-criteria-lists) variants 
 /**
  * @return array
  */
-$prefectures = \BVP\Prefecture\Prefecture::all();
+$prefectures = Prefecture::all();
 
 print_r($prefectures);
 
