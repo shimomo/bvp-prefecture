@@ -158,7 +158,6 @@ $prefecture = Prefecture::byEnglishName('tokyo');
 #### 地方番号での検索
 ```php
 /**
- * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNumberList() を使用してください。
  * @return array|null
  */
 $prefecture = Prefecture::byRegionNumber(3);
@@ -168,7 +167,6 @@ $prefecture = Prefecture::byRegionNumber(3);
 #### 地方名での検索
 ```php
 /**
- * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNameList() を使用してください。
  * @return array|null
  */
 $prefecture = Prefecture::byRegionName('関東地方');
@@ -178,7 +176,6 @@ $prefecture = Prefecture::byRegionName('関東地方');
 #### 地方略称での検索
 ```php
 /**
- * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionShortNameList() を使用してください。
  * @return array|null
  */
 $prefecture = Prefecture::byRegionShortName('関東');
@@ -206,12 +203,6 @@ $prefectures = Prefecture::byNameList('東京都', '広島県');
  */
 $prefectures = Prefecture::byRegionNumberList(3, 6);
 // または Prefecture::byRegionNumberList([3, 6]);
-
-/**
- * @return array|null
- */
-$prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
-// または Prefecture::byRegionNameList(['関東地方', '中国地方']);
 ```
 
 ## データ仕様
