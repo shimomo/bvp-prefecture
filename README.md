@@ -1,13 +1,14 @@
-# Prefecture
+# BVP Prefecture
 
 [![Build Status](https://github.com/shimomo/bvp-prefecture/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions?query=workflow%3Atests)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
-[![PHP Version Require](http://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
+[![PHP Version Require](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
 [![Latest Stable Version](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
 [![Latest Unstable Version](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture)
 [![License](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-The BVP Prefecture package is designed to retrieve information about Japanese prefectures using identifiers, including Number (Region) and Name (Short, Hiragana, Katakana, English, Region).
+The BVP Prefecture package provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
+It is useful for applications that need to handle Japanese geographic data in a consistent and normalized way.
 
 ## Installation
 ```bash
@@ -23,202 +24,191 @@ require __DIR__ . '/vendor/autoload.php';
 use BVP\Prefecture\Prefecture;
 ```
 
-### For all()
-```php
-$prefecture = Prefecture::all();
+### Available Methods
 
-var_dump($prefecture);
+#### Retrieving All Prefectures
+- [`Prefecture::all()`](#retrieve-all-prefectures)
+
+#### Filtering by Prefecture
+- [`Prefecture::byNumber()`](#filter-by-prefecture-number)
+- [`Prefecture::byName()`](#filter-by-prefecture-name)
+- [`Prefecture::byShortName()`](#filter-by-prefecture-short-name)
+- [`Prefecture::byHiraganaName()`](#filter-by-prefecture-hiragana-name)
+- [`Prefecture::byKatakanaName()`](#filter-by-prefecture-katakana-name)
+- [`Prefecture::byEnglishName()`](#filter-by-prefecture-english-name)
+
+#### Filtering by Region
+- [`Prefecture::byRegionNumber()`](#filter-by-region-number)
+- [`Prefecture::byRegionName()`](#filter-by-region-name)
+- [`Prefecture::byRegionShortName()`](#filter-by-region-short-name)
+
+Each method also supports [`List`](#filter-by-multiple-criteria-lists) variants like [`byNameList()`](#filter-by-multiple-criteria-lists) or [`byRegionNameList()`](#filter-by-multiple-criteria-lists) for multiple inputs.
+
+---
+
+#### Retrieve All Prefectures
+```php
+/**
+ * @return array
+ */
+$prefectures = \BVP\Prefecture\Prefecture::all();
+
+print_r($prefectures);
+
 /*------------------------------
-array(47) {
-  [1] => array(9) {
-    'number' => int(1)
-    'name' => string(9) "北海道"
-    'short_name' => string(9) "北海道"
-    'hiragana_name' => string(18) "ほっかいどう"
-    'katakana_name' => string(18) "ホッカイドウ"
-    'english_name' => string(8) "hokkaido"
-    'region_number' => int(1)
-    'region_name' => string(15) "北海道地方"
-    'region_short_name' => string(9) "北海道"
-  }
-  ...
-  [47] => array(9) {
-    'number' => int(47)
-    'name' => string(9) "沖縄県"
-    'short_name' => string(6) "沖縄"
-    'hiragana_name' => string(18) "おきなわけん"
-    'katakana_name' => string(18) "オキナワケン"
-    'english_name' => string(7) "okinawa"
-    'region_number' => int(8)
-    'region_name' => string(12) "九州地方"
-    'region_short_name' => string(6) "九州"
-  }
-}
+Array
+(
+    [1] => Array
+        (
+            [number] => 1
+            [name] => 北海道
+            [short_name] => 北海道
+            [hiragana_name] => ほっかいどう
+            [katakana_name] => ホッカイドウ
+            [english_name] => hokkaido
+            [region_number] => 1
+            [region_name] => 北海道地方
+            [region_short_name] => 北海道
+        )
+    [2] => Array(...) // Aomori
+    [3] => Array(...) // Iwate
+    ...
+    [46] => Array(...) // Kagoshima
+    [47] => Array(...) // Okinawa
+)
 ------------------------------*/
 ```
 
-### For byXxxList()
+---
+
+#### Filter by Prefecture Number
 ```php
-$prefecture = Prefecture::byNumberList(13, 34);
-// or $prefecture = Prefecture::byNumberList([13, 34]);
-
-$prefecture = Prefecture::byNameList('東京都', '広島県');
-// or $prefecture = Prefecture::byNameList(['東京都', '広島県']);
-
-$prefecture = Prefecture::byShortNameList('東京', '広島');
-// or $prefecture = Prefecture::byShortNameList(['東京', '広島']);
-
-$prefecture = Prefecture::byHiraganaNameList('とうきょうと', 'ひろしまけん');
-// or $prefecture = Prefecture::byHiraganaNameList(['とうきょうと', 'ひろしまけん']);
-
-$prefecture = Prefecture::byKatakanaNameList('トウキョウト', 'ヒロシマケン');
-// or $prefecture = Prefecture::byKatakanaNameList(['トウキョウト', 'ヒロシマケン']);
-
-$prefecture = Prefecture::byEnglishNameList('tokyo', 'hiroshima');
-// or $prefecture = Prefecture::byEnglishNameList(['tokyo', 'hiroshima']);
-
-var_dump($prefecture);
-/*------------------------------
-array(2) {
-  [13] => array(9) {
-    'number' => int(13)
-    'name' => string(9) "東京都"
-    'short_name' => string(6) "東京"
-    'hiragana_name' => string(18) "とうきょうと"
-    'katakana_name' => string(18) "トウキョウト"
-    'english_name' => string(5) "tokyo"
-    'region_number' => int(3)
-    'region_name' => string(12) "関東地方"
-    'region_short_name' => string(6) "関東"
-  }
-  [34] => array(9) {
-    'number' => int(34)
-    'name' => string(9) "広島県"
-    'short_name' => string(6) "広島"
-    'hiragana_name' => string(18) "ひろしまけん"
-    'katakana_name' => string(18) "ヒロシマケン"
-    'english_name' => string(9) "hiroshima"
-    'region_number' => int(6)
-    'region_name' => string(12) "中国地方"
-    'region_short_name' => string(6) "中国"
-  }
-}
-------------------------------*/
-
-$prefecture = Prefecture::byRegionNumberList(3, 6);
-// or $prefecture = Prefecture::byRegionNumberList([3, 6]);
-
-$prefecture = Prefecture::byRegionNameList('関東', '中国');
-// or $prefecture = Prefecture::byRegionNameList(['関東', '中国']);
-
-var_dump($prefecture);
-/*------------------------------
-array(12) {
-  [8] =>array(9) {
-    'number' => int(8)
-    'name' => string(9) "茨城県"
-    'short_name' => string(6) "茨城"
-    'hiragana_name' => string(18) "いばらきけん"
-    'katakana_name' => string(18) "イバラキケン"
-    'english_name' => string(7) "ibaraki"
-    'region_number' => int(3)
-    'region_name' => string(12) "関東地方"
-    'region_short_name' => string(6) "関東"
-  }
-  [9] => array(9) {
-    'number' => int(9)
-    'name' => string(9) "栃木県"
-    'short_name' => string(6) "栃木"
-    'hiragana_name' => string(15) "とちぎけん"
-    'katakana_name' => string(15) "トチギケン"
-    'english_name' => string(7) "tochigi"
-    'region_number' => int(3)
-    'region_name' => string(12) "関東地方"
-    'region_short_name' => string(6) "関東"
-  }
-  ...
-  [34] =>array(9) {
-    'number' => int(34)
-    'name' => string(9) "広島県"
-    'short_name' => string(6) "広島"
-    'hiragana_name' => string(18) "ひろしまけん"
-    'katakana_name' => string(18) "ヒロシマケン"
-    'english_name' => string(9) "hiroshima"
-    'region_number' => int(6)
-    'region_name' => string(12) "中国地方"
-    'region_short_name' => string(6) "中国"
-  }
-  [35] =>array(9) {
-    'number' => int(35)
-    'name' => string(9) "山口県"
-    'short_name' => string(6) "山口"
-    'hiragana_name' => string(18) "やまぐちけん"
-    'katakana_name' => string(18) "ヤマグチケン"
-    'english_name' => string(9) "yamaguchi"
-    'region_number' => int(6)
-    'region_name' => string(12) "中国地方"
-    'region_short_name' => string(6) "中国"
-  }
-}
-------------------------------*/
-```
-
-### For byXxx()
-```php
+/**
+ * @return array|null
+ */
 $prefecture = Prefecture::byNumber(13);
 // or $prefecture = Prefecture::byNumber([13]);
 
-$prefecture = Prefecture::byName('東京都');
-// or $prefecture = Prefecture::byName(['東京都']);
+print_r($prefecture);
 
-$prefecture = Prefecture::byShortName('東京');
-// or $prefecture = Prefecture::byShortName(['東京']);
-
-$prefecture = Prefecture::byHiraganaName('とうきょうと');
-// or $prefecture = Prefecture::byHiraganaName(['とうきょうと']);
-
-$prefecture = Prefecture::byKatakanaName('トウキョウト');
-// or $prefecture = Prefecture::byKatakanaName(['トウキョウト']);
-
-$prefecture = Prefecture::byEnglishName('tokyo');
-// or $prefecture = Prefecture::byEnglishName(['tokyo']);
-
-var_dump($prefecture);
 /*------------------------------
-array(9) {
-  'number' => int(13)
-  'name' => string(9) "東京都"
-  'short_name' => string(6) "東京"
-  'hiragana_name' => string(18) "とうきょうと"
-  'katakana_name' => string(18) "トウキョウト"
-  'english_name' => string(5) "tokyo"
-  'region_number' => int(3)
-  'region_name' => string(12) "関東地方"
-  'region_short_name' => string(6) "関東"
-}
-------------------------------*/
-
-$prefecture = Prefecture::byRegionNumber(3);
-// or $prefecture = Prefecture::byRegionNumber([3]);
-
-$prefecture = Prefecture::byRegionName('関東');
-// or $prefecture = Prefecture::byRegionName(['関東']);
-
-var_dump($prefecture);
-/*------------------------------
-array(9) {
-  'number' => int(8)
-  'name' => string(9) "茨城県"
-  'short_name' => string(6) "茨城"
-  'hiragana_name' => string(18) "いばらきけん"
-  'katakana_name' => string(18) "イバラキケン"
-  'english_name' => string(7) "ibaraki"
-  'region_number' => int(3)
-  'region_name' => string(12) "関東地方"
-  'region_short_name' => string(6) "関東"
-}
+Array
+(
+    [number] => 13
+    [name] => 東京都
+    [short_name] => 東京
+    [hiragana_name] => とうきょうと
+    [katakana_name] => トウキョウト
+    [english_name] => tokyo
+    [region_number] => 3
+    [region_name] => 関東地方
+    [region_short_name] => 関東
+)
 ------------------------------*/
 ```
+
+#### Filter by Prefecture Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byName('東京都');
+// or $prefecture = Prefecture::byName(['東京都']);
+```
+
+#### Filter by Prefecture Short Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byShortName('東京');
+// or $prefecture = Prefecture::byShortName(['東京']);
+```
+
+#### Filter by Prefecture Hiragana Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byHiraganaName('とうきょうと');
+// or $prefecture = Prefecture::byHiraganaName(['とうきょうと']);
+```
+
+#### Filter by Prefecture Katakana Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byKatakanaName('トウキョウト');
+// or $prefecture = Prefecture::byKatakanaName(['トウキョウト']);
+```
+
+#### Filter by Prefecture English Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byEnglishName('tokyo');
+// or $prefecture = Prefecture::byEnglishName(['tokyo']);
+```
+
+---
+
+#### Filter by Region Number
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byRegionNumber(3);
+// or $prefecture = Prefecture::byRegionNumber([3]);
+```
+
+#### Filter by Region Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byRegionName('関東地方');
+// or $prefecture = Prefecture::byRegionName(['関東地方']);
+```
+
+#### Filter by Region Short Name
+```php
+/**
+ * @return array|null
+ */
+$prefecture = Prefecture::byRegionShortName('関東');
+// or $prefecture = Prefecture::byRegionShortName(['関東']);
+```
+
+---
+
+#### Filter by Multiple Criteria (Lists)
+```php
+/**
+ * @return array|null
+ */
+$prefectures = Prefecture::byNumberList(13, 34);
+// or Prefecture::byNumberList([13, 34]);
+
+/**
+ * @return array|null
+ */
+$prefectures = Prefecture::byNameList('東京都', '広島県');
+// or Prefecture::byNameList(['東京都', '広島県']);
+
+/**
+ * @return array|null
+ */
+$prefectures = Prefecture::byRegionNumberList(3, 6);
+// or Prefecture::byRegionNumberList([3, 6]);
+```
+
+## Why use this?
+- Consistent and normalized prefecture data for Japanese apps
+- Multiple name formats supported (Kanji, Hiragana, Katakana, English)
+- Easy to filter by region or name
+- No dependencies beyond PHP
 
 ## License
 The BVP Prefecture package is open source software licensed under the [MIT license](LICENSE).
