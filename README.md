@@ -1,5 +1,7 @@
 # BVP Prefecture
 
+[English](./README.md) | [日本語](./README_ja.md)
+
 [![Build Status](https://github.com/shimomo/bvp-prefecture/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions?query=workflow%3Atests)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
 [![PHP Version Require](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
@@ -204,11 +206,13 @@ $prefectures = Prefecture::byRegionNumberList(3, 6);
 // or Prefecture::byRegionNumberList([3, 6]);
 ```
 
+## Data Format
+The prefecture codes used in this package are based on JIS X 0401 (Japanese Prefecture Codes), with leading zeros removed and represented as integers.
+
 ## Why use this?
 - Consistent and normalized prefecture data for Japanese apps
 - Multiple name formats supported (Kanji, Hiragana, Katakana, English)
 - Easy to filter by region or name
-- No dependencies beyond PHP
 
 ## License
 The BVP Prefecture package is open source software licensed under the [MIT license](LICENSE).
