@@ -159,7 +159,7 @@ $prefecture = Prefecture::byEnglishName('tokyo');
 #### Filter by Region Number
 ```php
 /**
- * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionNameList() instead.
+ * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionNumberList() instead.
  * @return array|null
  */
 $prefecture = Prefecture::byRegionNumber(3);
@@ -179,7 +179,7 @@ $prefecture = Prefecture::byRegionName('関東地方');
 #### Filter by Region Short Name
 ```php
 /**
- * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionNameList() instead.
+ * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionShortNameList() instead.
  * @return array|null
  */
 $prefecture = Prefecture::byRegionShortName('関東');
