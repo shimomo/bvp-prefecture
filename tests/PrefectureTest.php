@@ -258,7 +258,7 @@ final class PrefectureTest extends TestCase
     /**
      * @return void
      */
-    public function testExceptionOnTooManyArguments(): void
+    public function testThrowsExceptionWhenArgumentsAreTooMany(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(
