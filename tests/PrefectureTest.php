@@ -229,7 +229,7 @@ final class PrefectureTest extends TestCase
     /**
      * @return void
      */
-    public function testExceptionOnDoesNotExistMethodCall(): void
+    public function testThrowsExceptionWhenMethodDoesNotExist(): void
     {
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
