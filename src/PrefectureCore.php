@@ -92,7 +92,7 @@ class PrefectureCore implements PrefectureCoreInterface
         }
 
         $snakeCaseName = $this->convertToSnakeCase($name);
-        $flattenArguments = $this->arrayFlatten($arguments);
+        $flattenArguments = $this->convertToFlatArray($arguments);
         $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
         if (!empty($exactMatchedPrefectures)) {
             return $this->arrayKeyBy($exactMatchedPrefectures, 'number');
@@ -128,7 +128,7 @@ class PrefectureCore implements PrefectureCoreInterface
         }
 
         $snakeCaseName = $this->convertToSnakeCase($name);
-        $flattenArguments = $this->arrayFlatten($arguments);
+        $flattenArguments = $this->convertToFlatArray($arguments);
         $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, $flattenArguments[0]);
         if (!is_null($exactMatchedPrefecture)) {
             return $exactMatchedPrefecture;
@@ -146,7 +146,7 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  array  $array
      * @return array
      */
-    private function arrayFlatten(array $array): array
+    private function convertToFlatArray(array $array): array
     {
         $response = [];
         array_walk_recursive($array, function ($value) use (&$response) {
