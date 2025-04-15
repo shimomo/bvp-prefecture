@@ -234,7 +234,7 @@ final class PrefectureTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Prefecture\PrefectureCore::resolveMethod() - " .
-            "The specified method 'invalid' does not exist in class 'BVP\Prefecture\PrefectureCore'."
+            "Call to undefined method 'BVP\Prefecture\PrefectureCore::invalid()'."
         );
 
         Prefecture::invalid();

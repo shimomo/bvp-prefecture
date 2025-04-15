@@ -61,7 +61,7 @@ class PrefectureCore implements PrefectureCoreInterface
         }
 
         throw new \BadMethodCallException(
-            __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
+            __METHOD__ . "() - Call to undefined method '" . self::class . "::{$name}()'."
         );
     }
 
