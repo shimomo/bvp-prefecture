@@ -91,7 +91,7 @@ class PrefectureCore implements PrefectureCoreInterface
             );
         }
 
-        $snakeCaseName = $this->snakeCase($name);
+        $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = $this->arrayFlatten($arguments);
         $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
         if (!empty($exactMatchedPrefectures)) {
@@ -127,7 +127,7 @@ class PrefectureCore implements PrefectureCoreInterface
             );
         }
 
-        $snakeCaseName = $this->snakeCase($name);
+        $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = $this->arrayFlatten($arguments);
         $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, $flattenArguments[0]);
         if (!is_null($exactMatchedPrefecture)) {
@@ -170,7 +170,7 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  string  $value
      * @return string
      */
-    private function snakeCase(string $value): string
+    private function convertToSnakeCase(string $value): string
     {
         return ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $value)), '_');
     }
