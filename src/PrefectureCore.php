@@ -72,7 +72,7 @@ class PrefectureCore implements PrefectureCoreInterface
      */
     private function all(string $name, array $arguments): array
     {
-        return $this->arrayKeyBy($this->prefectures, 'number');
+        return $this->convertToKeyedArray($this->prefectures, 'number');
     }
 
     /**
@@ -95,7 +95,7 @@ class PrefectureCore implements PrefectureCoreInterface
         $flattenArguments = $this->convertToFlatArray($arguments);
         $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
         if (!empty($exactMatchedPrefectures)) {
-            return $this->arrayKeyBy($exactMatchedPrefectures, 'number');
+            return $this->convertToKeyedArray($exactMatchedPrefectures, 'number');
         }
 
         $partialMatchedPrefectures  = array_filter($this->prefectures, function ($prefecture, $key) use ($snakeCaseName, $flattenArguments) {
@@ -104,7 +104,7 @@ class PrefectureCore implements PrefectureCoreInterface
             }));
         }, ARRAY_FILTER_USE_BOTH);
         if (!empty($partialMatchedPrefectures)) {
-            return $this->arrayKeyBy($partialMatchedPrefectures, 'number');
+            return $this->convertToKeyedArray($partialMatchedPrefectures, 'number');
         }
 
         return null;
@@ -161,7 +161,7 @@ class PrefectureCore implements PrefectureCoreInterface
      * @param  string  $key
      * @return array
      */
-    private function arrayKeyBy(array $array, string $key): array
+    private function convertToKeyedArray(array $array, string $key): array
     {
         return array_combine(array_column($array, $key), $array);
     }
