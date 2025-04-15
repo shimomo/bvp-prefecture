@@ -234,10 +234,10 @@ final class PrefectureTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Prefecture\PrefectureCore::resolveMethod() - " .
-            "Call to undefined method 'BVP\Prefecture\PrefectureCore::invalid()'."
+            "Call to undefined method 'BVP\Prefecture\PrefectureCore::ghost()'."
         );
 
-        Prefecture::invalid();
+        Prefecture::ghost();
     }
 
     /**
