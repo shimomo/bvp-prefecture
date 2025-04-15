@@ -1,4 +1,5 @@
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/prefecture",
     "description": "The BVP Prefecture package for Japan.",
     "keywords": [
@@ -13,9 +14,13 @@
     "authors": [
         {
             "name": "shimomo",
-            "email": "developer@shimomo.net"
+            "email": "bvp@shimomo.net"
         }
     ],
+    "support": {
+        "issues": "https://github.com/shimomo/bvp-prefecture/issues",
+        "source": "https://github.com/shimomo/bvp-prefecture"
+    },
     "require": {
         "php": "^8.2",
         "shimomo/helper": "^1.0"
