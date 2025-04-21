@@ -4,13 +4,18 @@ on:
   push:
     branches:
       - main
+      - '*.x'
+  pull_request:
+    branches:
+      - main
+      - '*.x'
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
   tests:
     name: PHP ${{ matrix.php-version }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       id-token: write
